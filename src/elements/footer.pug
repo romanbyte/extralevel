@@ -1,0 +1,53 @@
+footer
+  .container
+    .row
+
+      .col-lg-4.col-md-4
+        p г. Москва, <br> Большая Калитниковская, д.42, <br> этаж 3, офис 303
+        .footer-logo
+          a(href="https://www.extralevel.ru/"): img(src=assetsUrl + "images/logo.svg")
+
+      .col-lg-4.col-md-4
+        .footer-contact
+          p: a(href="tel: +74959662866").footer-phone +7 (495) 966-28-66
+          p: a(href="mailto: hello@extralevel.ru").footer-email hello@extralevel.ru
+
+        .social-nav
+          a(href="https://www.facebook.com/extralevel/" , target="_blank"): img(src=assetsUrl + "images/facebook.svg")
+          a(href="https://instagram.com/extralevelschool?r=nametag" , target="_blank"): img(src=assetsUrl + "images/instagram.svg")
+          a(href="https://vk.com/xtralevel" , target="_blank"): img(src=assetsUrl + "images/vk.svg")
+
+      .col-lg-4.col-md-4
+        ul.footer-nav
+          li: a(href="https://www.extralevel.ru/landing/oferta.pdf" , target="_blank") Договор оферты
+          li: a(href="https://www.extralevel.ru/landing/privacy_policy.pdf" , target="_blank") Политика конфиденциальности
+
+
+#want-study.mfp-hide.white-popup-block
+  .title-popup ПОДОБРАТЬ КУРС ИЛИ ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
+  .success Спасибо! Менеджер скоро с вами свяжется
+
+  form(name="getCourse" , method="post" , action="http://extralevel-amo-service.d-01.srvdev.ru/applications")#getCourse.popup-form
+    .form-row
+      input(type="text" , name="name" , required)
+      b.placeholder Имя
+      span *
+      label.error-label Некорректные данные
+    .form-row
+      input(type="phone" , name="phone" , required)
+      b.placeholder Телефон
+      span *
+      label.error-label Некорректные данные
+    .form-row
+      input(type="email" , name="email" , required)
+      b.placeholder Email
+      span *
+      label.error-label Некорректные данные
+
+    //input(name="profession" type="hidden" value="159715")
+    input(name="course" type="hidden" value="748395")
+    input(name="page" type="hidden" value="главная")
+    input(name="source" type="hidden" value="741895")
+
+    .form-row.text-center: button(type="submit").primary-btn.brand-btn Отправить
+  p.personal-data Нажимая на кнопку, я соглашаюсь <br> на <a href="https://www.extralevel.ru/landing/privacy_policy.pdf" , target="_blank">обработку персональных данных.</a>
