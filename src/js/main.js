@@ -242,6 +242,9 @@
       var $this = $(this);
 
       $this.submit(function(e) {
+
+        $this.find('button[type="submit"]').attr('disabled' , 'disabled');
+
         e.preventDefault();
 
         $.ajax({
@@ -253,6 +256,10 @@
           console.log('success');
           $('.success').show();
           $getCorseForm.trigger('reset');
+          $getCorseForm.find('button[type="submit"]').removeAttr('disabled');
+          $getCorseForm.find('input').removeClass('active');
+          $getCorseForm.hide();
+          $getCorseForm.next('p').hide();
           // TODO по событию success вывести сообщение об успешной отправки формы
         }).fail(function() {
           console.log('fail');

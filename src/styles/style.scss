@@ -1059,10 +1059,17 @@ footer {
 
 .success {
 	font-size: 20px;
-	line-height: 30px;
+	line-height: 42px;
 	text-align: center;
 	margin-bottom: 20px;
 	display: none;
+		span {
+			font-weight: 700;
+			font-size: 32px;
+			line-height: 42px;
+			display: block;
+			color: $default-text-color;
+		}
 }
 
 button.mfp-close {
@@ -1095,11 +1102,8 @@ button.mfp-close {
 @media screen and (max-width: 1400px) {
 
 	.hero-img {
-		.hero-bg {
-			right: 0;
-		}
-		.hero-person {
-			right: 19px;
+		.hero-large {
+			right: -160px;
 		}
 	}
 
