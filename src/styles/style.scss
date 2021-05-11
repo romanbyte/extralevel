@@ -207,12 +207,8 @@ header {
 				}
 		}
 
-		p {
-			max-width: 590px;
-			font-weight: 400;
-			font-size: 24px;
-			line-height: 34px;
-			margin-bottom: 50px;
+		.brand-btn {
+			margin-top: 60px;
 		}
 
 }
@@ -235,7 +231,7 @@ header {
 }
 
 .additional-info {
-	margin: 25px 0 0 0;
+	margin: 120px 0 0 0;
 	padding: 0;
 	display: flex;
 	justify-content: space-between;
@@ -315,6 +311,11 @@ header {
 		margin-bottom: 40px;
 		h2 {
 			text-transform: uppercase;
+		}
+		p {
+			margin-top: -50px;
+			font-size: 24px;
+			line-height: 34px;
 		}
 	}
 
@@ -872,7 +873,7 @@ footer {
 	}
 
 	.footer-nav {
-		margin: 70px 0 0 0;
+		margin: 0 0 35px 0;
 		padding: 0;
 		li {
 			margin: 0 0 10px 0;
@@ -1010,7 +1011,7 @@ footer {
 			}
 	}
 	.form-row {
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 		position: relative;
 			&.error {
 				.error-label {
@@ -1035,7 +1036,6 @@ footer {
 		display: none;
 	}
 	& + .personal-data {
-		margin-top: 40px;
 		text-align: center;
 		font-size: 20px;
 		line-height: 30px;
@@ -1211,6 +1211,12 @@ button.mfp-close {
 }
 
 @media screen and (max-width: 991px) {
+
+	.section-title {
+		p {
+			margin-top: -20px;
+		}
+	}
 
 	.hero-img {
 		.hero-bg {
@@ -1425,10 +1431,6 @@ button.mfp-close {
 		margin-top: 73px;
 	}
 
-	.footer-nav {
-    margin: 65px 0 0 0;
-  }
-
   .program-effect {
   	display: none;
   }
@@ -1436,6 +1438,11 @@ button.mfp-close {
 }
 
 @media screen and (max-width: 767px) {
+
+	.section-title p {
+    font-size: 16px;
+    line-height: 25px;
+  }
 
 	.white-popup-block {
 		max-width: 340px;
