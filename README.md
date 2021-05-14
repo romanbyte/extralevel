@@ -1,4 +1,25 @@
 # el-gamedev
-Convert design to responsive Landing Page
 
-Live version - https://vitalso.github.io/el-gamedev/
+Веб приложение проекта Extralevel.
+
+Gulp сборка статичного сайта
+
+Структура проекта
+
+`src/common` - общие элементы всех лендингов
+
+`src/<landing>` - исходники конкретного лендинга
+
+`src/<landing>.pug` - шаблоны html страниц.
+
+Шаблоны собираются с использованием расширения (`extend` https://pugjs.org/language/inheritance.html )
+базового шаблона, находящегося в `common/layout/_layout.pug`
+
+Файлы с префиксом `_` не проходят сборку Gulp, то есть в папке `public` не появляются
+
+Переменные влияющие на сборку:
+
+`assetsURL` - путь до ассетов
+`amoServiceURL`  - адрес сервиса интеграции
+
+@TODO вытащить общие элементы в папку `common`
