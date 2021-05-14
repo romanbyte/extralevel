@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production ./node_modules/.bin/gulp build",
+    "build": "AMO_SERVICE_URL=test NODE_ENV=production ./node_modules/.bin/gulp build",
     "build:dev": "./node_modules/.bin/gulp build",
     "watch": "./node_modules/.bin/gulp watch"
   },
@@ -19,6 +19,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.1.0",
     "gulp-svg-sprite": "^1.5.0",
+    "gulp-tap": "^2.0.0",
     "gulp-watch": "^5.0.1"
   }
 }

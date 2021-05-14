@@ -1,32 +1,34 @@
 const gulp = require('gulp')
-const { parallel, series } = require('gulp')
+const {parallel, series} = require('gulp')
+const tap = require('gulp-tap')
 
 const watch = require('gulp-watch')
-const	sass = require('gulp-sass')
-const	pug = require('gulp-pug')
-const	browserSync = require('browser-sync')
+const sass = require('gulp-sass')
+const pug = require('gulp-pug')
+const browserSync = require('browser-sync')
 const imagemin = require('gulp-imagemin')
-const	svgSprite = require('gulp-svg-sprite')
+const svgSprite = require('gulp-svg-sprite')
 const del = require('del');
-const assetsURL = process.env.NODE_ENV === "production" ? '/' :''
+const assetsURL = process.env.NODE_ENV === "production" ? '' : ''
 const amoServiceURL = process.env.AMO_SERVICE_URL || "http://extralevel-amo-service.d-01.srvdev.ru/applications"
 
 /* Complete SASS */
 function styles() {
-  return gulp.src('src/styles/*.scss')
-    .pipe(sass().on('error' , sass.logError))
-    .pipe(gulp.dest('public/gamedev/css/'))
+  return gulp.src('src/**/**/**/css/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('public/'))
     .pipe(browserSync.reload({stream: true}))
 }
 
 /* Pug(Jade) */
 function pug2html() {
-  return gulp.src('src/**/*.pug')
+  return gulp.src('src/**/!(_)*.pug')
     .pipe(pug({
-        pretty: true,
-        data: {
-            assetURL: assetsURL
-        }
+      pretty: true,
+      data: {
+        assetsUrl: assetsURL,
+        amoServiceUrl: amoServiceURL
+      }
     }))
     .pipe(gulp.dest('public'))
     .pipe(browserSync.reload({stream: true}))
@@ -34,57 +36,81 @@ function pug2html() {
 
 /* JavaScript&jQuery */
 function scripts() {
-  return gulp.src('src/js/*.js')
-    .pipe(gulp.dest('public/gamedev/js'))
+  return gulp.src('src/**/**/**/js/*.js')
+    .pipe(gulp.dest('public/'))
     .pipe(browserSync.reload({stream: true}))
 }
 
 /* Images */
 function imageMinify() {
-  return gulp.src('src/images/*.{gif,png,jpg,svg,webp,ico}')
+  return gulp.src('src/**/**/**/*.{gif,png,jpg,svg,webp,ico}')
     .pipe(imagemin([
       //imagemin.gifsicle({ interlaced: true }),
       imagemin.mozjpeg({
         quality: 75,
         progressive: true
       }),
-      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.optipng({optimizationLevel: 5}),
       imagemin.svgo({
         plugins: [
-          { removeViewBox: true },
-          { cleanupIDs: false }
+          {removeViewBox: true},
+          {cleanupIDs: false}
         ]
       })
     ]))
-    .pipe(gulp.dest('public/gamedev/images'))
+    .pipe(gulp.dest('public/'))
     .pipe(browserSync.reload({stream: true}))
 }
 
 /* SVG sprite */
+
+const PROJECT_NAME_REGEXP = new RegExp('/src/([^/]+)/images/sprite/');
+
+function getProjectName(path) {
+  const [, projectName] = PROJECT_NAME_REGEXP.exec(path);
+
+  return projectName;
+}
+
 function spriteSVG() {
-  return gulp.src('src/images/sprite/*.svg') // svg files for sprite
-    .pipe(svgSprite({
-        mode: {
-            stack: {
-                sprite: "../sprite.svg"  //sprite file name
-            }
-        },
+  let projectName = ""
+  return gulp.src('src/**/**/**/sprite/*.svg') // svg files for sprite
+    .pipe(tap(function (file, t) {
+      projectName = getProjectName(file.path)
     }))
-    .pipe(gulp.dest('public/gamedev/images'))
+    .pipe(svgSprite({
+      mode: {
+        stack: {
+          sprite: `../sprite.svg` //sprite file name
+        }
+      }
+    }))
+    .pipe(gulp.dest(function (file) {
+      return `public/${projectName}/images/`
+    }))
     .pipe(browserSync.reload({stream: true}))
 }
 
 function fonts() {
-    return gulp.src('src/fonts/**')
-        .pipe(gulp.dest('public/gamedev/fonts'))
-        .pipe(browserSync.reload({stream: true}))
+  return gulp.src('src/**/**/**/fonts/**')
+    .pipe(gulp.dest('public/'))
+    .pipe(browserSync.reload({stream: true}))
+}
+
+function documents() {
+  return gulp.src('src/**/**/**/*.{webmanifest,pdf,docx,xls}')
+    .pipe(gulp.dest('public/'))
+    .pipe(browserSync.reload({stream: true}))
 }
 
 /* Browser-sync */
 function browser() {
   browserSync({
     server: {
-      baseDir: 'public'
+      baseDir: 'public',
+      routes: {
+        '/unity': '/unity.html'
+      }
     },
     notify: false
   })
@@ -93,19 +119,19 @@ function browser() {
 function watching() {
 
 //gulp.task('watch' , ['browserSync' , 'pug2html' , 'styles' , 'imageMinify' , 'svgSprite' , 'scripts'] , function(){
-	watch('src/styles/*.scss' , styles);
-	watch('src/*.pug' , pug2html);
-	watch('src/js/*.js' , scripts);
-	watch('src/images/*.{gif,png,jpg,svg,webp}' , imageMinify);
-	watch('src/images/sprite/*.svg' , spriteSVG);
+  watch('src/**/**/*.scss', styles);
+  watch('src/**/**/*.pug', pug2html);
+  watch('src/**/**/*.js', scripts);
+  watch('src/**/**/*.{gif,png,jpg,svg,webp}', imageMinify);
+  watch('src/**/**/sprite/*.svg', spriteSVG);
 }
 
 function clean() {
-    return del(['public/**', '!public/extra-level.ico']);
+  return del(['public/**', '!public/extra-level.ico']);
 }
 
-exports.watch = parallel(watching , browser , pug2html , styles , imageMinify , spriteSVG , scripts , fonts);
+exports.watch = parallel(watching, browser, pug2html, styles, imageMinify, spriteSVG, scripts, fonts, documents);
 
 exports.build = series(clean,
-               parallel(pug2html , styles , imageMinify , spriteSVG , scripts, fonts)
-             );
+  parallel(pug2html, styles, imageMinify, spriteSVG, scripts, fonts, documents)
+);

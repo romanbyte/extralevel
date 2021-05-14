@@ -1,352 +1,348 @@
-﻿doctype html
-html(lang='en')
-  head
-    include elements/head.pug
-  body
+﻿extends common/layout/_layout.pug
 
-    <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3KXQNP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+//- var assetsUrl = 'gamedev/';
 
-    - var assetsUrl = 'gamedev/';
+block append styles
+  link(rel='stylesheet' , href=assetsUrl + "gamedev/css/style.css")
 
-    // Main page start
-    main
+block content
+  // Main page start
+  main
 
-      // Header
-      header
-        .container
-          .row.center
+    // Header
+    header
+      .container
+        .row.center
+          .col-md-3.col-6
+            .logo
+              a(href="https://www.extralevel.ru/"): img(src=assetsUrl + "gamedev/images/logo.svg")
 
-            .col-md-3.col-6
-              .logo
-                a(href="https://www.extralevel.ru/"): img(src=assetsUrl + "images/logo.svg")
+          .col-lg-4.col-md-9.col-6
+            nav.navbar.navbar-expand-lg.navbar-light
+              button.navbar-toggler.toggle-nav(type="button" , data-bs-toggle="collapse" , data-bs-target="#navbarSupportedContent" , aria-controls="navbarSupportedContent" , aria-expanded="false" , aria-label="Toggle navigation")
+                span
+                span
+                span
+              div#navbarSupportedContent.collapse.navbar-collapse
+                //ul
+                  li: a(href="https://www.extralevel.ru/" , target="_blank") Курсы
 
-            .col-lg-4.col-md-9.col-6
-              nav.navbar.navbar-expand-lg.navbar-light
-                button.navbar-toggler.toggle-nav(type="button" , data-bs-toggle="collapse" , data-bs-target="#navbarSupportedContent" , aria-controls="navbarSupportedContent" , aria-expanded="false" , aria-label="Toggle navigation")
+                .header-contact.d-lg-none.d-flex
+                  a(href="#want-study").primary-btn.popup-modal Хочу учиться
+                  a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
+
+
+          .col-md-5
+            .header-contact
+              a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
+              a(href="#want-study").primary-btn.popup-modal Хочу учиться
+
+    // Intro
+    section.intro
+      .container.position-relative
+
+        .row
+          .col-md-7
+            .intro-description
+              h1 ПОМОЖЕМ ОСВОИТЬ ВОСТРЕБОВАННУЮ И ИНТЕРЕСНУЮ ПРОФЕССИЮ <br> В <span>GAMEDEV</span> И <span>IT</span>
+              a(href="#want-study").primary-btn.brand-btn.popup-modal Подобрать курс
+
+          .col-md-5
+            .hero-img
+              img(src=assetsUrl + "gamedev/images/hero-large.png").hero-large
+              //img(src=assetsUrl + "gamedev/images/hero.png").hero-person
+              //img(src=assetsUrl + "gamedev/images/hero-bg.png").hero-bg
+
+          .col-md-12
+            ul.additional-info
+              li Преподаватели с огромным опытом в игровой индустрии и IT
+              li Много практики и удобный формат обучения
+              li Акселератор для лучших проектов
+
+    // Find way
+    section.find-way
+      .container
+        .section-title
+          h2 В нашей школе каждый сможет найти свой путь
+          p У нас вы сможете найти себя, научитесь чему-то новому или адаптируете уже имеющиеся знания для покорения новых профессиональных вершин
+
+        .row
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "gamedev/images/way-1.png")
+              .way-title Новички, которые только начинают карьеру
+              p В любом возрасте и с любым уровнем знаний
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "gamedev/images/way-2.png")
+              .way-title Специалисты, которые хотят сменить профессию
+              p Чтобы перейти в более перспективную и интересную сферу
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "gamedev/images/way-3.png")
+              .way-title Профессионалы, которые хотят прокачать свои навыки
+              p И подняться на еще более высокий уровень в профессии
+
+    // All Course
+    section.all-course
+      .container
+        .section-title
+          h2 все курсы школы
+
+        .row
+          .col-lg-4.col-md-6
+            a(href="/unity" , target="_blank")
+              .course-item.animated
+                .course-img
+                  img(src=assetsUrl + "gamedev/images/course-1.png")
+                .course-desc
+                  h4 Разработка игр на Unity для начинающих
+                  .course-time Длительность: <span>3 месяца</span>
+
+          .col-lg-4.col-md-6
+            .course-item.animated
+              .course-img
+                img(src=assetsUrl + "gamedev/images/course-2.png")
+              .course-desc
+                h4 Геймдизайн для начинающих
+                .course-time В разработке
+
+          .col-lg-4.col-md-6
+            .course-item.animated
+              .course-img
+                img(src=assetsUrl + "gamedev/images/course-3.png")
+              .course-desc
+                h4 3D-графика для начинающих
+                .course-time В разработке
+
+          .col-lg-4.col-md-6
+            .course-item.animated
+              .course-img
+                img(src=assetsUrl + "gamedev/images/course-4.png")
+              .course-desc
+                h4 Концепт-арт
+                .course-time В разработке
+
+          .col-lg-4.col-md-6
+            .course-item.animated
+              .course-img
+                img(src=assetsUrl + "gamedev/images/course-5.png")
+              .course-desc
+                h4 Разработка мобильных приложений iOS
+                .course-time В разработке
+
+          .col-lg-4.col-md-6
+            .course-item.animated
+              .course-img
+                img(src=assetsUrl + "gamedev/images/course-6.png")
+              .course-desc
+                h4 Разработка мобильных приложений Android
+                .course-time В разработке
+
+    // Teachers
+    section.teachers
+      .container.position-relative
+        .section-title
+          h2 Преподаватели — сотрудники ведущих компаний и крутые профессионалы
+          .teachers-img
+            img(src=assetsUrl + "gamedev/images/teachers-img-full.png")
+            //img(src=assetsUrl + "gamedev/images/teachers-figure.png").teachers-figure
+
+        .row
+          .col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-1.jpg")
+              h5 Алексей Лукьянов
+              p.teacher-position Lead Developer в Azur Games (Robot Warfare)
+              p Написал собственный 3D-движок, принимал участие в разработке SDK и фреймворков для Unity. Опыт в программировании — 25 лет
+
+          .col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-2.jpg")
+              h5 Игорь Клюкин
+              p.teacher-position ex Chief Operating Officer в Pixonic (War Robots)
+              p Работал геймдизайнером, руководителем проекта, возглавлял отдел аналитики и в 2014 году стал исполнительным директором компании Pixonic
+
+          .col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-3.jpg")
+              h5 Леонид Маковский
+              p.teacher-position eLearning Developer в Extra Level
+              p Евангелист дистанционного обучения. Знает, как сделать его увлекательным и продуктивным
+
+          .col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-4.png")
+              h5 Антон Кругляков
+              p.teacher-position Enterprise Developer Relations Manager в компании Unity
+              p Расскажет о практиках ведущих разработчиков в индустрии, чтобы вы могли освоить актуальные навыки
+
+          .col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-5.jpg")
+              h5 Петр Вечкасов
+              p.teacher-position Lead Artist в Crazy Panda
+              p Занимается компьютерной графикой более 15 лет
+
+          //.col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-3.jpg")
+              h5 Леонид Маковский
+              p.teacher-position eLearning Developer в Extra Level
+              p Евангелист дистанционного обучения. Знает, как сделать его увлекательным и продуктивным
+
+    // Example of work
+    section.works
+      .container
+        .row
+          .col-md-6.section-title
+            h2 Так выглядят работы наших студентов
+              img(src=assetsUrl + "gamedev/images/example-img.png").example-img
+
+          .col-md-6.slider-nav
+            button.prev
+              svg
+                use(xlink:href=assetsUrl + "gamedev/images/sprite.svg#arrow")
+            button.next
+              svg
+                use(xlink:href=assetsUrl + "gamedev/images/sprite.svg#arrow")
+
+      .wrap-example
+        .example-slider
+          .example-item
+            img(src=assetsUrl + "gamedev/images/work-1.jpg")
+          .example-item
+            img(src=assetsUrl + "gamedev/images/work-2.png")
+          .example-item
+            img(src=assetsUrl + "gamedev/images/work-3.jpg")
+          .example-item
+            img(src=assetsUrl + "gamedev/images/work-4.png")
+
+    // How study section
+    section.how-study
+      .container
+        .section-title
+          h2 Как проходит обучение
+
+        .row
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 1
+              h5 Изучаете тему курса
+              p Короткие практические видеоуроки помогут закрепить знания и позволят обучаться в комфортном темпе
+
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 2
+              h5 Выполняете домашние задания
+              p После прохождения уроков вы получаете задания для закрепления новых навыков
+
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 3
+              h5 Работаете с наставником
+              p Если не удается выполнить задание, наши кураторы всегда помогут советом, который подтолкнет вас к правильному решению
+
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 4
+              h5 Пополняете портфолио
+              p В конце курса у вас будет что положить в портфолио
+
+          .col-md-12.text-center
+            a(href="#want-study").primary-btn.brand-btn.popup-modal ПОДОБРАТЬ КУРС ИЛИ ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
+
+    // Faq
+    section.faq
+      .container
+        .row.center
+          .col-md-6
+            .section-title
+              h2 Часто задаваемые вопросы
+
+          .col-md-6.text-end
+            img(src=assetsUrl + "gamedev/images/faq-img.png").faq-img
+
+        .faq-wrap
+          .faq-item
+            .faq-title Какой график обучения? Получится ли совмещать его с работой?
+            p С материалами курса можно работать в удобное время, двигаясь по программе в подходящем для вас темпе. Все уроки будут навсегда доступны по окончании курса, так что вы в любой момент сможете освежить свои знания. Обучение организовано таким образом, чтобы вы могли совмещать его с работой, учебой и личной жизнью.
+
+          .faq-item
+            .faq-title Сколько часов в неделю мне нужно будет уделять учёбе?
+            p Все зависит от вас. В среднем наши студенты занимаются от двух до четырех часов в неделю.
+
+          .faq-item
+            .faq-title Я смогу общаться с преподавателями?
+            p У вас будет свой куратор в чате «Телеграма», а преподаватель курса прокомментирует домашние задания и даст полезный фидбэк. Это поможет вам перенять уникальный опыт, профессиональные знания и необходимые в работе лайфхаки.
+
+          .faq-item
+            .faq-title Действуют ли какие-нибудь программы рассрочки?
+            p Да, вы можете купить курс в рассрочку и спланировать свой бюджет, разбив всю сумму на небольшие ежемесячные платежи.
+
+          .faq-item
+            .faq-title У меня нет опыта в программировании. Я могу пройти курс?
+            p Этот курс сможет пройти каждый, кто действительно в этом заинтересован. На нем вы получите все необходимые основы программирования для работы в игровой индустрии.
+
+          .faq-item
+            .faq-title Как получить доступ к курсу?
+            p Этот курс сможет пройти каждый, кто действительно в этом заинтересован. На нем вы получите все необходимые основы программирования для работы в игровой индустрии.
+
+    // Price of study
+    //section.price-study
+      .container
+        .row
+          .col-lg-6.col-md-12
+            .cost
+              .cost-with-sale Стоимость обучения
+
+              .end-of-sale −25% <span>при оплате <br> до 1 июня</span>
+
+              .current-price 29 000 ₽
+              .past-price 39 000 ₽
+
+              .price-part
+                p С рассрочкой на 12 месяцев:
+                p.one-time-price 2 417 ₽/месяц
+                p Беспроцентная рассрочка без переплат <br> от Тинькофф — нашего банка-партнера.
+
+          .col-lg-6.col-md-12
+            .sign-to-course
+              .time-course
+                p Старт курса: <span>1 мая</span>
+                p Осталось: <span>12 мест</span>
+
+              .title-form Записаться на курс или получить бесплатную консультацию
+
+              form.free-consult
+                .form-row: input(type="text" , name="" , placeholder="Имя, фамилия")
+                .form-row: input(type="email" , name="" , placeholder="Email")
+                .form-row: input(type="phone" , name="" , placeholder="Телефон")
+                .form-row
+                  input(type="checkbox" , name="").checkbox
                   span
-                  span
-                  span
-                div#navbarSupportedContent.collapse.navbar-collapse
-                  //ul
-                    li: a(href="https://www.extralevel.ru/" , target="_blank") Курсы
-
-                  .header-contact.d-lg-none.d-flex
-                    a(href="#want-study").primary-btn.popup-modal Хочу учиться
-                    a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
+                  label Нажимая на кнопку, я соглашаюсь на <a href="https://www.extralevel.ru/landing/privacy_policy.pdf" , target="_blank">обработку персональных данных.</a>
+                .form-row: button(type="submit") Записаться
 
 
-            .col-md-5
-              .header-contact
-                a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
-                a(href="#want-study").primary-btn.popup-modal Хочу учиться
+  // Footer start
+  include gamedev/elements/_footer.pug
 
-      // Intro
-      section.intro
-        .container.position-relative
-
-          .row
-            .col-md-7
-              .intro-description
-                h1 ПОМОЖЕМ ОСВОИТЬ ВОСТРЕБОВАННУЮ И ИНТЕРЕСНУЮ ПРОФЕССИЮ <br> В <span>GAMEDEV</span> И <span>IT</span>
-                a(href="#want-study").primary-btn.brand-btn.popup-modal Подобрать курс
-
-            .col-md-5
-              .hero-img
-                img(src=assetsUrl + "images/hero-large.png").hero-large
-                //img(src=assetsUrl + "images/hero.png").hero-person
-                //img(src=assetsUrl + "images/hero-bg.png").hero-bg
-
-            .col-md-12
-              ul.additional-info
-                li Преподаватели с огромным опытом в игровой индустрии и IT
-                li Много практики и удобный формат обучения
-                li Акселератор для лучших проектов
-
-      // Find way
-      section.find-way
-        .container
-          .section-title
-            h2 В нашей школе каждый сможет найти свой путь
-            p У нас вы сможете найти себя, научитесь чему-то новому или адаптируете уже имеющиеся знания для покорения новых профессиональных вершин
-
-          .row
-            .col-md-4
-              .way-item
-                .way-img
-                  img(src=assetsUrl + "images/way-1.png")
-                .way-title Новички, которые только начинают карьеру
-                p В любом возрасте и с любым уровнем знаний
-
-            .col-md-4
-              .way-item
-                .way-img
-                  img(src=assetsUrl + "images/way-2.png")
-                .way-title Специалисты, которые хотят сменить профессию
-                p Чтобы перейти в более перспективную и интересную сферу
-
-            .col-md-4
-              .way-item
-                .way-img
-                  img(src=assetsUrl + "images/way-3.png")
-                .way-title Профессионалы, которые хотят прокачать свои навыки
-                p И подняться на еще более высокий уровень в профессии
-
-      // All Course
-      section.all-course
-        .container
-          .section-title
-            h2 все курсы школы
-
-          .row
-            .col-lg-4.col-md-6
-              a(href="https://www.extralevel.ru/unity" , target="_blank")
-                .course-item.animated
-                  .course-img
-                    img(src=assetsUrl + "images/course-1.png")
-                  .course-desc
-                    h4 Разработка игр на Unity для начинающих
-                    .course-time Длительность: <span>3 месяца</span>
-
-            .col-lg-4.col-md-6
-              .course-item.animated
-                .course-img
-                  img(src=assetsUrl + "images/course-2.png")
-                .course-desc
-                  h4 Геймдизайн для начинающих
-                  .course-time В разработке
-
-            .col-lg-4.col-md-6
-              .course-item.animated
-                .course-img
-                  img(src=assetsUrl + "images/course-3.png")
-                .course-desc
-                  h4 3D-графика для начинающих
-                  .course-time В разработке
-
-            .col-lg-4.col-md-6
-              .course-item.animated
-                .course-img
-                  img(src=assetsUrl + "images/course-4.png")
-                .course-desc
-                  h4 Концепт-арт
-                  .course-time В разработке
-
-            .col-lg-4.col-md-6
-              .course-item.animated
-                .course-img
-                  img(src=assetsUrl + "images/course-5.png")
-                .course-desc
-                  h4 Разработка мобильных приложений iOS
-                  .course-time В разработке
-
-            .col-lg-4.col-md-6
-              .course-item.animated
-                .course-img
-                  img(src=assetsUrl + "images/course-6.png")
-                .course-desc
-                  h4 Разработка мобильных приложений Android
-                  .course-time В разработке
-
-      // Teachers
-      section.teachers
-        .container.position-relative
-          .section-title
-            h2 Преподаватели — сотрудники ведущих компаний и крутые профессионалы
-            .teachers-img
-              img(src=assetsUrl + "images/teachers-img-full.png")
-              //img(src=assetsUrl + "images/teachers-figure.png").teachers-figure
-
-          .row
-            .col-md-4.col-8
-              .teacher-item.animated
-                .teacher-img
-                  img(src=assetsUrl + "images/teacher-1.jpg")
-                h5 Алексей Лукьянов
-                p.teacher-position Lead Developer в Azur Games (Robot Warfare)
-                p Написал собственный 3D-движок, принимал участие в разработке SDK и фреймворков для Unity. Опыт в программировании — 25 лет
-
-            .col-md-4.col-8
-              .teacher-item.animated
-                .teacher-img
-                  img(src=assetsUrl + "images/teacher-2.jpg")
-                h5 Игорь Клюкин
-                p.teacher-position ex Chief Operating Officer в Pixonic (War Robots)
-                p Работал геймдизайнером, руководителем проекта, возглавлял отдел аналитики и в 2014 году стал исполнительным директором компании Pixonic
-
-            .col-md-4.col-8
-              .teacher-item.animated
-                .teacher-img
-                  img(src=assetsUrl + "images/teacher-3.jpg")
-                h5 Леонид Маковский
-                p.teacher-position eLearning Developer в Extra Level
-                p Евангелист дистанционного обучения. Знает, как сделать его увлекательным и продуктивным
-
-            .col-md-4.col-8
-              .teacher-item.animated
-                .teacher-img
-                  img(src=assetsUrl + "images/teacher-4.png")
-                h5 Антон Кругляков
-                p.teacher-position Enterprise Developer Relations Manager в компании Unity
-                p Расскажет о практиках ведущих разработчиков в индустрии, чтобы вы могли освоить актуальные навыки
-
-            .col-md-4.col-8
-              .teacher-item.animated
-                .teacher-img
-                  img(src=assetsUrl + "images/teacher-5.jpg")
-                h5 Петр Вечкасов
-                p.teacher-position Lead Artist в Crazy Panda
-                p Занимается компьютерной графикой более 15 лет
-
-            //.col-md-4.col-8
-              .teacher-item.animated
-                .teacher-img
-                  img(src=assetsUrl + "images/teacher-3.jpg")
-                h5 Леонид Маковский
-                p.teacher-position eLearning Developer в Extra Level
-                p Евангелист дистанционного обучения. Знает, как сделать его увлекательным и продуктивным
-
-      // Example of work
-      section.works
-        .container
-          .row
-            .col-md-6.section-title
-              h2 Так выглядят работы наших студентов
-                img(src=assetsUrl + "images/example-img.png").example-img
-
-            .col-md-6.slider-nav
-              button.prev
-                svg
-                  use(xlink:href=assetsUrl + "images/sprite.svg#arrow")
-              button.next
-                svg
-                  use(xlink:href=assetsUrl + "images/sprite.svg#arrow")
-
-        .wrap-example
-          .example-slider
-            .example-item
-              img(src=assetsUrl + "images/work-1.jpg")
-            .example-item
-              img(src=assetsUrl + "images/work-2.png")
-            .example-item
-              img(src=assetsUrl + "images/work-3.jpg")
-            .example-item
-              img(src=assetsUrl + "images/work-4.png")
-
-      // How study section
-      section.how-study
-        .container
-          .section-title
-            h2 Как проходит обучение
-
-          .row
-            .col-lg-3.col-md-12
-              .study-item
-                .study-number
-                  .number 1
-                h5 Изучаете тему курса
-                p Короткие практические видеоуроки помогут закрепить знания и позволят обучаться в комфортном темпе
-
-            .col-lg-3.col-md-12
-              .study-item
-                .study-number
-                  .number 2
-                h5 Выполняете домашние задания
-                p После прохождения уроков вы получаете задания для закрепления новых навыков
-
-            .col-lg-3.col-md-12
-              .study-item
-                .study-number
-                  .number 3
-                h5 Работаете с наставником
-                p Если не удается выполнить задание, наши кураторы всегда помогут советом, который подтолкнет вас к правильному решению
-
-            .col-lg-3.col-md-12
-              .study-item
-                .study-number
-                  .number 4
-                h5 Пополняете портфолио
-                p В конце курса у вас будет что положить в портфолио
-
-            .col-md-12.text-center
-              a(href="#want-study").primary-btn.brand-btn.popup-modal ПОДОБРАТЬ КУРС ИЛИ ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
-
-      // Faq
-      section.faq
-        .container
-          .row.center
-            .col-md-6
-              .section-title
-                h2 Часто задаваемые вопросы
-
-            .col-md-6.text-end
-              img(src=assetsUrl + "images/faq-img.png").faq-img
-
-          .faq-wrap
-            .faq-item
-              .faq-title Какой график обучения? Получится ли совмещать его с работой?
-              p С материалами курса можно работать в удобное время, двигаясь по программе в подходящем для вас темпе. Все уроки будут навсегда доступны по окончании курса, так что вы в любой момент сможете освежить свои знания. Обучение организовано таким образом, чтобы вы могли совмещать его с работой, учебой и личной жизнью.
-
-            .faq-item
-              .faq-title Сколько часов в неделю мне нужно будет уделять учёбе?
-              p Все зависит от вас. В среднем наши студенты занимаются от двух до четырех часов в неделю.
-
-            .faq-item
-              .faq-title Я смогу общаться с преподавателями?
-              p У вас будет свой куратор в чате «Телеграма», а преподаватель курса прокомментирует домашние задания и даст полезный фидбэк. Это поможет вам перенять уникальный опыт, профессиональные знания и необходимые в работе лайфхаки.
-
-            .faq-item
-              .faq-title Действуют ли какие-нибудь программы рассрочки?
-              p Да, вы можете купить курс в рассрочку и спланировать свой бюджет, разбив всю сумму на небольшие ежемесячные платежи.
-
-            .faq-item
-              .faq-title У меня нет опыта в программировании. Я могу пройти курс?
-              p Этот курс сможет пройти каждый, кто действительно в этом заинтересован. На нем вы получите все необходимые основы программирования для работы в игровой индустрии.
-
-            .faq-item
-              .faq-title Как получить доступ к курсу?
-              p Этот курс сможет пройти каждый, кто действительно в этом заинтересован. На нем вы получите все необходимые основы программирования для работы в игровой индустрии.
-
-      // Price of study
-      //section.price-study
-        .container
-          .row
-            .col-lg-6.col-md-12
-              .cost
-                .cost-with-sale Стоимость обучения
-
-                .end-of-sale −25% <span>при оплате <br> до 1 июня</span>
-
-                .current-price 29 000 ₽
-                .past-price 39 000 ₽
-
-                .price-part
-                  p С рассрочкой на 12 месяцев:
-                  p.one-time-price 2 417 ₽/месяц
-                  p Беспроцентная рассрочка без переплат <br> от Тинькофф — нашего банка-партнера.
-
-            .col-lg-6.col-md-12
-              .sign-to-course
-                .time-course
-                  p Старт курса: <span>1 мая</span>
-                  p Осталось: <span>12 мест</span>
-
-                .title-form Записаться на курс или получить бесплатную консультацию
-
-                form.free-consult
-                  .form-row: input(type="text" , name="" , placeholder="Имя, фамилия")
-                  .form-row: input(type="email" , name="" , placeholder="Email")
-                  .form-row: input(type="phone" , name="" , placeholder="Телефон")
-                  .form-row
-                    input(type="checkbox" , name="").checkbox
-                    span
-                    label Нажимая на кнопку, я соглашаюсь на <a href="https://www.extralevel.ru/landing/privacy_policy.pdf" , target="_blank">обработку персональных данных.</a>
-                  .form-row: button(type="submit") Записаться
-
-
-    // Footer start
-    include elements/footer.pug
-
-    // jQuery & Bootstrap scripts
-    include elements/scripts.pug
+block append scripts
+  // Main script
+  script(src=`${assetsUrl}gamedev/js/main.js`)

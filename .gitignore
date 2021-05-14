@@ -37,3 +37,9 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 .idea
+
+# Docker dev
+.bash_history
+/app
+.node-gyp/
+.yarnrc

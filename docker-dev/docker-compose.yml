@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  extralevel-main-static:
+    container_name: extralevel-main-static
+    build:
+      context: .
+      args:
+        UID: "${DOCKER_UID:-1000}"
+        GID: "${DOCKER_GID:-1000}"
+    volumes:
+      - ../:/home/node/app
+      - ./cont-init.d:/etc/cont-init.d
+    ports:
+      - 3300:3000
