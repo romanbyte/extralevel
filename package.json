@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "AMO_SERVICE_URL=test NODE_ENV=production ./node_modules/.bin/gulp build",
+    "build": "NODE_ENV=production ./node_modules/.bin/gulp build",
     "build:dev": "./node_modules/.bin/gulp build",
     "watch": "./node_modules/.bin/gulp watch"
   },
