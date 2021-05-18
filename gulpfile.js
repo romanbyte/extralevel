@@ -97,8 +97,14 @@ function fonts() {
     .pipe(browserSync.reload({stream: true}))
 }
 
+function favicon() {
+  return gulp.src('src/common/favicon/site.webmanifest')
+    .pipe(gulp.dest('public/common/favicon/'))
+    .pipe(browserSync.reload({stream: true}))
+}
+
 function documents() {
-  return gulp.src('src/**/**/**/*.{webmanifest,pdf,docx,xls}')
+  return gulp.src('src/common/docs/*.{pdf,docx,xls}')
     .pipe(gulp.dest('public/'))
     .pipe(browserSync.reload({stream: true}))
 }
@@ -130,8 +136,8 @@ function clean() {
   return del(['public/**', '!public/extra-level.ico']);
 }
 
-exports.watch = parallel(watching, browser, pug2html, styles, imageMinify, spriteSVG, scripts, fonts, documents);
+exports.watch = parallel(watching, browser, pug2html, styles, imageMinify, spriteSVG, scripts, fonts, documents, favicon);
 
 exports.build = series(clean,
-  parallel(pug2html, styles, imageMinify, spriteSVG, scripts, fonts, documents)
+  parallel(pug2html, styles, imageMinify, spriteSVG, scripts, fonts, documents, favicon)
 );
