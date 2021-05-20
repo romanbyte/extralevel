@@ -32,24 +32,6 @@
             $('.hero-figure').css("right", newvalueY*1.7+"px");
   });
 
-  // Expert slider
-  /*$('.experts-slider').slick({
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    arrows: false,
-    dots: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  });*/
-
   // Example of works slider
   $('.example-slider').slick({
     infinite: false,
@@ -80,6 +62,14 @@
     $(this).toggleClass('open');
     $(this).find('p').slideToggle();
   });
+
+  // Scroll to section
+  $('.scroll-down').on('click' , function(e){
+    e.preventDefault();
+    var hash = $(this).attr('href');
+
+    $('html, body').animate({scrollTop: $(hash).offset().top}, 1000);
+  })
 
   // Popup with video
   $('.popup-youtube').magnificPopup({
@@ -246,7 +236,7 @@
           data: createAMOJSON($this)
         }).done(function() {
           console.log('success');
-          $('.success').show();
+          $('.sign-to-course').find('.success').show();
           $getCorseForm.trigger('reset');
           $getCorseForm.find('button[type="submit"]').removeAttr('disabled');
           $getCorseForm.hide();
@@ -277,7 +267,7 @@
           data: createAMOJSON($this)
         }).done(function() {
           console.log('success');
-          $('.success').show();
+          $('.white-popup-block').find('.success').show();
           $getCorseFormPopup.trigger('reset');
           $getCorseFormPopup.find('button[type="submit"]').removeAttr('disabled');
           $getCorseFormPopup.find('input').removeClass('active');
