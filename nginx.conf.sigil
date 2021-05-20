@@ -14,7 +14,7 @@ server {
   error_log   {{ $.NGINX_LOG_ROOT }}/{{ $.APP }}-error.log;
 
  if ($host = 'extralevel.ru') {
-       return 301 https://www.extralevel.ru$request_uri;
+       # return 301 https://www.extralevel.ru$request_uri;
   }
 
 {{ if (and (eq $listen_port "80") ($.SSL_INUSE)) }}
@@ -69,7 +69,7 @@ server {
   {{ if $.NOSSL_SERVER_NAME }}server_name {{ $.NOSSL_SERVER_NAME }}; {{ end }}
 
   if ($host = 'extralevel.ru') {
-      return 301 https://www.extralevel.ru$request_uri;
+      # return 301 https://www.extralevel.ru$request_uri;
     }
 
   access_log  {{ $.NGINX_LOG_ROOT }}/{{ $.APP }}-access.log;
