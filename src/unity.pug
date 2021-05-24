@@ -382,24 +382,26 @@ block content
             img(src=assetsUrl + "unity/images/work-4.png")
 
     // Price of study
-    section#price-study.price-study
+    section.price-study
       .container
         .row
           .col-md-6
             .cost
               .cost-with-sale
-                |Стоимость <br> обучения <span>−25%<i>при оплате <br> до 31 мая</i></span>
+                |Стоимость <br> обучения <span>−25%<i>при оплате <br> до 1 июня</i></span>
 
-              .current-price 29 000 ₽
-              .past-price 39 000 ₽
+              .current-price 2 417 ₽ <span>/месяц</span>
+
+              //.current-price 29 000 ₽
+              //.past-price 39 000 ₽
 
               .price-part
-                p С рассрочкой на 12 месяцев:
-                p.one-time-price 2 417 ₽/месяц
-                p Беспроцентная рассрочка без переплат от Тинькофф — нашего банка-партнера.
+                p Полная цена:
+                p.one-time-price 29 000 ₽ <span>39 000₽</span>
+                p *Рассрочка без процентов и переплат от банка-партнера Тинькофф
 
           .col-md-6
-            .sign-to-course
+            #price-study.sign-to-course
               .time-course
                 p Старт курса: <span>15 мая</span>
                 p Осталось: <span>12 мест</span>
