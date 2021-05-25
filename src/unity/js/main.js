@@ -6,11 +6,21 @@
   });
 
   // Parallax effect for inner intro section
+  var top_position = $('#price-study').offset().top;
+
   $(window).on('scroll' , function() {
 
     // Change position of image intro
     $('.hero-person').css('top' , - $(window).scrollTop()*0.3);
     //$('.hero-bg').css('top' , - $(window).scrollTop()*0.2);
+
+    if ($(window).width() <= 480) {
+      if ($(window).scrollTop() > top_position - 900) {
+        $('.wrap-fixed-button').hide();
+      } else {
+        $('.wrap-fixed-button').show();
+      }
+    }
 
   });
 
