@@ -7,6 +7,8 @@
 
   // Parallax effect for inner intro section
   var top_position = $('#price-study').offset().top;
+  var top_position_1 = $('#what-learn-row').offset().top;
+  var top_position_2 = $('.how-study').offset().top;
 
   $(window).on('scroll' , function() {
 
@@ -15,7 +17,13 @@
     //$('.hero-bg').css('top' , - $(window).scrollTop()*0.2);
 
     if ($(window).width() <= 480) {
-      if ($(window).scrollTop() > top_position - 900) {
+      if ($(window).scrollTop() >= 0 && $(window).scrollTop() < top_position_1) {
+        $('.wrap-fixed-button').hide();
+      } else if ($(window).scrollTop() > top_position_1 - 200 && $(window).scrollTop() < top_position_1 - 200 + $('#what-learn-row').height()) {
+        $('.wrap-fixed-button').show();
+      } else if ($(window).scrollTop() > top_position_2 + 200 && $(window).scrollTop() < top_position_2 + $('.how-study').height()) {
+        $('.wrap-fixed-button').hide();
+      } else if ($(window).scrollTop() > top_position - 800 && $(window).scrollTop() < top_position - 800 + $('#price-study').height()) {
         $('.wrap-fixed-button').hide();
       } else {
         $('.wrap-fixed-button').show();

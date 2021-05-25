@@ -13,7 +13,7 @@ block content
 
     // Fixed button on mobile
     .wrap-fixed-button
-      a(href="#price-study").primary-btn.brand-btn Получить консультацию
+      a(href="#price-study").primary-btn.brand-btn.scroll-down Получить консультацию
 
     // Header
     header
@@ -35,14 +35,14 @@ block content
                   li: a(href="https://www.extralevel.ru/" , target="_blank") Курсы
 
                 .header-contact.d-lg-none.d-flex
-                  a(href="#want-study").primary-btn.popup-modal Хочу учиться
+                  a(href="#want-study").primary-btn.popup-modal Начать учиться
                   a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
 
 
           .col-md-5
             .header-contact
               a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
-              a(href="#want-study").primary-btn.popup-modal Хочу учиться
+              a(href="#want-study").primary-btn.popup-modal Начать учиться
 
     // Intro
     section.intro
@@ -90,7 +90,7 @@ block content
         .what-learn-img
           img(src=assetsUrl + "unity/images/what-learn-img.png")
           //img(src="unity/images/Book-particles.gif").effect-img
-        .row
+        #what-learn-row.row
           .col-lg-9.col-md-12
             .row
               .col-md-6.col-lg-4

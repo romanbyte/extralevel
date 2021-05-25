@@ -849,7 +849,7 @@ h5 {
 	line-height: 24px;
 	color: #A1A1A1;
 	position: relative;
-	z-index: 999;
+	//z-index: 999;
 }
 
 // Faq
@@ -1588,6 +1588,8 @@ button.mfp-close {
 
 		.video-play {
 			width: 30px;
+			margin-left: -15px;
+    	margin-top: -15px;
 		}
 
 		h3 {
@@ -1773,9 +1775,9 @@ button.mfp-close {
 		}
 	}
 
-	.wrap-fixed-button {
+	/*.wrap-fixed-button {
 		display: block;
-	}
+	}*/
 
 }
 
