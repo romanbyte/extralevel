@@ -1485,7 +1485,7 @@ button.mfp-close {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
 	header {
 		.logo {
@@ -1512,9 +1512,8 @@ button.mfp-close {
 
 	.hero-img {
 		img {
-			width: 100%;
+			width: 70%;
 			height: auto;
-			position: relative;
 		}
 	}
 
@@ -1857,6 +1856,7 @@ button.mfp-close {
 			display: none;
 		}
 		.hero-mobile {
+			width: 100%;
 			display: block;
 			position: absolute;
 			top: 5%;
