@@ -1,0 +1,505 @@
+extends common/layout/_layout.pug
+
+block vars
+  - var GTM = "GTM-KTQN9JG"
+  - var title ="Онлайн-курс по 3D моделированию с нуля - ExtraLevel"
+
+block append styles
+  link(rel='stylesheet' , href=assetsUrl + "3d/css/style.css")
+
+block content
+  // Main page start
+  main
+
+    // Fixed button on mobile
+    .wrap-fixed-button
+      a(href="#price-study").primary-btn.brand-btn.scroll-down Получить консультацию
+
+    // Header
+    header
+      .container
+        .row.center
+
+          .col-md-3.col-6
+            .logo
+              a(href="https://www.extralevel.ru/"): img(src=assetsUrl + "3d/images/logo.svg")
+
+          .col-lg-4.col-md-9.col-6
+            nav.navbar.navbar-expand-lg.navbar-light
+              button.navbar-toggler.toggle-nav(type="button" , data-bs-toggle="collapse" , data-bs-target="#navbarSupportedContent" , aria-controls="navbarSupportedContent" , aria-expanded="false" , aria-label="Toggle navigation")
+                span
+                span
+                span
+              div#navbarSupportedContent.collapse.navbar-collapse
+                ul
+                  li: a(href="https://www.extralevel.ru/" , target="_blank") Курсы
+
+                .header-contact.d-lg-none.d-flex
+                  a(href="#want-study").primary-btn.popup-modal Начать учиться
+                  a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
+
+
+          .col-md-5
+            .header-contact
+              a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
+              a(href="#want-study").primary-btn.popup-modal Начать учиться
+
+    // Intro
+    section.intro
+      .container
+        //.sale
+          span 25%
+          |Скидка при <br> оплате до <br> 31 мая
+
+        .row
+          .col-lg-6.col-md-9
+            .intro-description
+              h1 Онлайн-курс по <span>3D моделированию</span>с нуля
+              p Вы научитесь создавать модели в 3Ds Max, делать hard surface, UV-развертки. Освоите работу с материалами, текстурами и запеканием текстур в Substance painter. Научитесь работе в Marmoset toolbag для финального рендера и дальнейшего импорта вашей модели в игровой движок Unity 3D.
+              a(href="#price-study").primary-btn.brand-btn.d-none.d-md-inline-block.scroll-down записаться на курс
+
+          .col-md-6
+            .hero-img
+              img(src=assetsUrl + "3d/images/hero-img.png")
+              img(src=assetsUrl + "3d/images/hero-img-mobile.png").hero-mobile
+
+          .col-md-12
+            a(href="#price-study").primary-btn.brand-btn.d-block.d-md-none.scroll-down записаться на курс
+
+            ul.additional-info.intro-info.d-md-none.d-inline-block
+              li
+                |Длительность: <span>2,5 месяца</span>
+              li
+                |Формат лекций: <span>видео</span>
+              li
+                |Уровень: <span>с нуля</span>
+              li
+                |Доступ к курсу: <span>навсегда</span>
+
+            ul.additional-info
+              li
+                |Длительность: <span>2,5 месяца</span>
+              li
+                |Формат лекций: <span>видео</span>
+              li
+                |Уровень: <span>с нуля</span>
+              li
+                |Доступ к курсу: <span>навсегда</span>
+
+    // Find way
+    section.find-way
+      .container
+        .section-title
+          h2 Чему вы научитесь
+
+        .row
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-1.png")
+              p Созданию low poly и high poly модели в программе 3Ds Max.
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-2.png")
+              p Экспорту и работе с текстурами в программе Substance painter.
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-3.png")
+              p Импорту, настройке материалов, сцены и света, а также финальному рендеру в программе Marmoset toolbag.
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-4.png")
+              p Импортировать свои модели в игровой движок Unity 3D.
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-5.png")
+              p Научитесь профессиональной терминологии, а также взаимодействию с другими ролями внутри индустрии.
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-6.png")
+              p Составлять портфолио, искать заказы и корректно общаться с заказчиком.
+
+        .wrap-video
+          a(href="https://www.youtube.com/watch?v=yDWsu7IyDNc").popup-youtube.d-block
+            img(src=assetsUrl + "3d/images/video.png")
+
+            button.video-play.popup-youtube
+              img(src=assetsUrl + "3d/images/video-btn.png")
+
+    // Author
+    section.author
+      .container
+        .section-title
+          h2 Автор курса
+
+        .row
+          .col-md-5.position-relative
+            .author-img
+              img(src=assetsUrl + "3d/images/author.png")
+
+          .col-md-7
+            .author-description
+              .author-name Петр Вечкасов
+              .author-position Lead Artist (Crazy Panda)
+              ul.author-experience
+                li с 2008 года занимается 3D-графикой
+                li участвовал в разработке realtime-тренажера для симуляции полета на Марс "Марс-500"
+                li участвовал в создании JAVA-игр под мобильные устройства
+                li работал над мобильной игрой по вселенной Метро2033
+                li работал арт-директором над шутером B.D.S.M. (Big Drunk Satanic Masscare)
+                li lead artist Crazy Panda на проекте World Poker Club
+
+        .row.center.mt-5
+          .col-md-7
+            blockquote Считает, что нельзя игнорировать стремительно растущий рынок игровой индустрии. Будущим студентам советует не лениться, помнить о том, что потраченное на обучение время пропорционально полученному результату, собирать качественное портфолио и разбираться в прилегающих областях.
+
+          .col-md-5
+            .example-slider
+              div: img(src=assetsUrl + "3d/images/example-1.jpeg")
+              div: img(src=assetsUrl + "3d/images/example-2.jpeg")
+              div: img(src=assetsUrl + "3d/images/example-3.png")
+              div: img(src=assetsUrl + "3d/images/example-4.jpeg")
+
+    // Progress
+    section.progress-game
+      .container
+        .row
+          .col-md-6
+            .section-title
+              h2 Рынок игр активно развивается
+              p Согласно Global Games Market Report, объём игровой индустрии в 2023 году составит более 200 млрд долларов. В то же время количество игроков перевалит за 3 млрд. Такой быстрый рост рождает спрос на специалистов. Одна из ключевых ролей в игровой индустрии — 3D моделлер.
+
+          .col-md-6
+            .program-figure
+              img(src=assetsUrl + "3d/images/store-figure.svg")
+
+        .row
+          .col-md-4
+            .progress-item
+              p <span>174,9</span> млрд долларов <br> общий объем игровой индустрии за 2020 год, по данным аналитического издания Gamesindustry.biz
+
+          .col-md-4
+            .progress-item
+              p на <span>35%</span> <br> вырос российский игровой рынок в 2020 году, по данным «Коммерсанта»
+
+          .col-md-4
+            .progress-item
+              p <span>60 000  ₽</span> <br> средняя зарплата начинающего 3D моделлера, по данным Hh.ru
+
+    // For who
+    section.for-who
+      .container
+        .section-title
+          h2 Наш курс подойдет
+
+        .row
+          .col-md-6
+            .who-item
+              .who-img
+                img(src=assetsUrl + "3d/images/who-1.png")
+              h5 Желающим окунуться в мир 3D - графики
+              p Освоите базовые программы для работы с 3D-графикой, научитесь моделировать 3D-объекты, настраивать текстуры и свет.
+
+          .col-md-6
+            .who-item
+              .who-img
+                img(src=assetsUrl + "3d/images/who-2.png")
+              h5 Тем, кто хочет сменить профессию
+              p Вы уже работаете в схожей или совершенно другой сфере, но хотите поменять ее на геймдев, тогда 3D - моделирование станет отличным шагом в этом направлении
+
+          .col-md-12
+            h4 Персональный подход к каждому студенту <br> поможет достичь лучшего результата
+            ul.personal-list
+              li Вы получаете доступ к закрытому чату в «Телеграме» с другими студентами и наставниками,которым всегда можно задать вопрос
+              li Наставники проверяют домашние задания и дают фидбэк
+              li В конце курса вы попадаете в практическую лабораторию — акселератор — с менторами, которые помогут вам объединиться с другими студентами в совместные проекты
+
+    // How study section
+    section.how-study
+      .container
+        .section-title
+          h2 Как проходит обучение
+
+        .row
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 1
+              h5 Изучаете <br> тему курса
+              p В курсе - видеолекции с теоретическим материалом
+
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 2
+              h5 Выполняете домашние задания
+              p В конце каждого модуля практические задания, необходимые для закрепления навыков
+
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 3
+              h5 Работаете с наставником
+              p Закрепляете знания и разбираете вопросы вместе с действующим 3D-моделлером
+
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 4
+              h5 Составляете портфолио
+              p По итогам обучения собираете портфолио из своих работ
+
+          .col-md-12.text-center
+            a(href="#want-study").primary-btn.brand-btn.popup-modal ЗАПИСАТЬСЯ НА КУРС ИЛИ ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
+
+    // Program
+    section.program
+      .container
+        .row.center
+          .col-lg-6
+            .section-title
+              h2 Программа
+              p Вас ждут онлайн-лекции и практические задания на основе реальных кейсов
+
+          .col-lg-6
+            .program-figure
+              img(src=assetsUrl + "3d/images/program-figure.svg")
+
+        .row.align
+          .col-lg-3.col-md-4.col-sm-6
+            .lesson-desc.green
+              p <span>18</span> тематических модулей
+          .col-lg-3.col-md-4.col-sm-6
+            .lesson-desc.green
+              p <span>62</span> онлайн-уроков
+
+          .col-md-12
+            .program-list
+              .program-list-item
+                b
+                  span 1.
+                  |  Основы 3D MAX
+                |Настройка интерфейса и базовое 3D-моделирвоание
+
+              .program-list-item
+                b
+                  span 2.
+                  |  Сплайны и изогнутые поверхности.
+                |Моделируем простые предметы
+
+              .program-list-item
+                b
+                  span 3.
+                  |  Базовый hard surface
+                |Введение в  hard surface на примере high poly предмета "Старый разводной ключ"
+
+              .program-list-item
+                b
+                  span 4.
+                  |  Ретопология простых объектов, Low poly
+                |Учимся делать ретопологию
+
+              .program-list-item
+                b
+                  span 5.
+                  |  UV развёртка на практике
+                |Делаем UV развёртку всех low poly объектов
+
+              .program-list-item
+                b
+                  span 6.
+                  |  Substance painter и проецирование нормалей
+                |Экспорт и запекание "Старый разводной ключ в Substance painter
+
+              .program-list-item
+                b
+                  span 7.
+                  |  Работа в Substance painter.
+                |Работа со слоями, материалами и экспорт готовых текстур
+
+              .program-list-item
+                b
+                  span 8.
+                  |  Marmoset и рендер.
+                |Импорт в Marmoset, настройка материалов, рендер
+
+              .program-list-item
+                b
+                  span 9.
+                  |  Импорт в Unity
+                |Знакомство с Unity 3D. Настройкой сцены и материалов
+
+              .program-list-item
+                b
+                  span 10.
+                  |  High poly модель колеса ровера
+                |Разработка high poly модели колеса
+
+              .program-list-item
+                b
+                  span 11.
+                  |  High poly модель корпуса ровера
+                |Разработка high poly модели корпуса
+
+              .program-list-item
+                b
+                  span 12.
+                  |  Завершаем модель корпуса ровера
+                |Финализируем последними штрихами модель корпуса
+
+              .program-list-item
+                b
+                  span 13.
+                  |  High poly модель креплений колёс к корпусу ровера
+                |Разработка high poly модели креплений для колес
+
+              .program-list-item
+                b
+                  span 14.
+                  |  High poly модель пушки ровера
+                |Разработка high poly модели пушки ровера
+
+              .program-list-item
+                b
+                  span 15.
+                  |  Делаем ретопологию ровера.
+                |Подготавливаем UV развёртку
+
+              .program-list-item
+                b
+                  span 16.
+                  |  Запекание в Substance paintrer
+                |Запекаем модель в Substance painter
+
+              .program-list-item
+                b
+                  span 17.
+                  |  Покраска и материалы в Substance painter.
+                |Финализируем модель с помощью покраски и применения материалов
+
+              .program-list-item
+                b
+                  span 18.
+                  |  Рендер модели в Marmoset toolbag
+                |Настраиваем сцену в Marmoset. Рендерим чистовые изображения
+
+              .text-center
+                a(href="#").primary-btn.brand-btn смотреть всю программу
+
+    // Price of study
+    section.price-study
+      .container
+        .row
+          .col-lg-6
+            .cost
+              .cost-with-sale
+                |СТОИМОСТЬ <br> ОБУЧЕНИЯ <span>−25%<i>при оплате <br> до 1 июня</i></span>
+
+              .current-price <span>от</span> 1 800 <span><b>₽</b> / месяц*</span>
+
+              //.current-price 29 000 ₽
+              //.past-price 39 000 ₽
+
+              .price-part
+                p Полная цена:
+                p.one-time-price 21 600 ₽ <span>27 000₽</span>
+                p *Рассрочка без процентов и переплат от банка-партнера Тинькофф
+
+          .col-lg-6
+            #price-study.sign-to-course
+              .title-form Записаться на курс или получить консультацию
+              .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
+
+              form(name="getCourse" , method="post" , action=amoServiceUrl)#getCourse.popup-form
+                .form-row
+                  input(type="text" , name="name" , required)
+                  b.placeholder Имя
+                  label.error-label Некорректные данные
+
+                .form-row
+                  input(type="email" , name="email" , required)
+                  b.placeholder Email
+                  label.error-label Некорректные данные
+
+                .form-row
+                  input(type="phone" , name="phone" , required)
+                  b.placeholder Телефон
+                  label.error-label Некорректные данные
+
+                input(name="course" type="hidden" value="769413")
+                input(name="page" type="hidden" value="3D моделирование с нуля")
+                input(name="source" type="hidden" value="741895")
+
+                .form-row: button(type="submit").primary-btn.brand-btn записаться на курс
+              //.free-consult
+                <script id="amoforms_script_769354" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1618840462"></script>
+                <script>!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"769354",hash:"206fd15000bf386dbb812f16193b2c3a",locale:"ru"})}(window,0,"amo_forms_","params","load");</script>
+
+              p.personal-data Нажимая на кнопку, я соглашаюсь на <a href="/privacy_policy.pdf" , target="_blank">обработку персональных данных</a>.
+
+    // Faq
+    section.faq
+      .container
+        .row.center
+          .col-md-6
+            .section-title
+              h2 Часто задаваемые вопросы
+
+          .col-md-6.text-end
+            img(src=assetsUrl + "3d/images/faq-img.png").faq-img
+
+        .faq-wrap
+          .faq-item
+            .faq-title У меня нет опыта в 3D моделинге. Я точно смогу освоить эту профессию?
+            p Разумеется! Нет необходимости в предварительной подготовке или специальных знаниях. Курс подготовлен для начинающих специалистов в области 3D и к процессу обучения вы подойдете с самых азов.
+
+          .faq-item
+            .faq-title Чем занимается 3D-моделлер?
+            p Работа 3D-моделлера нужна в сфере создания компьютерных и мобильных игр, архитектуре, кинематографе, дизайне, рекламе и даже медицине. Выделить самую нужную или перспективную – сложно, ведь все они по-своему интересны и хороши.
+            p Такому специалисту важно не только знать софт, но и уметь работать с формой, силуэтом и освещением.
+
+          .faq-item
+            .faq-title Какое оборудование нужно, чтобы начать? Боюсь, что без графического планшета и мощного компьютера на курсе делать нечего.
+            p Не переживайте, необходимости в планшете для прохождения курса нет, клавиатуры и мышки будет более, чем достаточно. Но вам точно понадобится:
+            ul
+              li *  Операционная система Microsoft Windows 8 и старше
+              li * 64-разрядный процессор с поддержкой набора инструкций SSE4.2.
+              li * ОЗУ не менее 4 ГБ (рекомендуется 8 и больше)
+
+          .faq-item
+            .faq-title Какой график обучения? Получится ли совмещать его с работой?
+            p Вы можете работать с материалами курса в удобное время и двигаться по программе в подходящем для вас темпе. Все уроки будут доступны и по окончании курса, то есть навсегда. Так что вы сможете освежить свои знания в любой момент.
+            p Мы организовали обучение таким образом, чтобы вы могли совмещать его с работой, учебой и личной жизнью.
+
+          .faq-item
+            .faq-title Сколько часов в неделю мне нужно будет уделять учебе?
+            p Все зависит от вас. В среднем наши студенты занимаются от двух до четырех часов в неделю.
+
+          .faq-item
+            .faq-title Я смогу общаться с преподавателями?
+            p У вас будет свой куратор в телеграм-чате, а преподаватель прокомментирует домашние задания и даст полезные советы. Это поможет вам перенять важный опыт, профессиональные знания и полезные лайфхаки.
+
+          .faq-item
+            .faq-title Действуют ли какие-нибудь программы рассрочки?
+            p Да. Вы можете приобрести курс в рассрочку и спланировать свой бюджет, разбив всю сумму на удобные ежемесячные платежи. Максимальный период рассрочки на сегодняшний день составляет 12 месяцев.
+
+          .faq-item
+            .faq-title Будут ли проверять домашку?
+            p В курсе предусмотрены разнообразные домашние задания, вы сможете их найти в конце каждого обучающего модуля. Преподаватель будет проверять их прямо на обучающей платформе в режиме диалога.
+
+  // Footer start
+  include 3d/elements/_footer.pug
+
+block append scripts
+  // Main script
+  script(src=assetsUrl + "3d/js/main.js")

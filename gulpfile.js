@@ -44,7 +44,7 @@ function scripts() {
 /* Images */
 function imageMinify() {
   return gulp.src('src/**/**/**/*.{gif,png,jpg,svg,webp,ico}')
-    .pipe(imagemin([
+    /*.pipe(imagemin([
       //imagemin.gifsicle({ interlaced: true }),
       imagemin.mozjpeg({
         quality: 75,
@@ -57,7 +57,7 @@ function imageMinify() {
           {cleanupIDs: false}
         ]
       })
-    ]))
+    ]))*/
     .pipe(gulp.dest('public/'))
     .pipe(browserSync.reload({stream: true}))
 }

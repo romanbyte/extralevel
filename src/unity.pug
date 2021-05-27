@@ -54,9 +54,11 @@ block content
         .row
           .col-md-6
             .intro-description
-              h1 Онлайн-курс <br> по разработке <br> игр на Unity <br> для начинающих
+              //h1 Онлайн-курс <br> по разработке <br> игр на Unity <br> для начинающих
+              h1 Научим зарабатывать на играх
+              h4 Онлайн-курс по разработке игр на Unity
               p Вы освоите язык программирования C#, научитесь создавать мобильные игры на популярном игровом движке  Unity, создадите свой первый проект для портфолио и обретете востребованную в геймдеве профессию
-              a(href="#price-study").primary-btn.brand-btn.d-none.d-md-inline-block.scroll-down Записаться на курс
+              a(href="#price-study").primary-btn.brand-btn.d-none.d-md-inline-block.scroll-down Получить бесплатный урок и консультацию
 
           .col-md-6
             ul.additional-info.intro-info.d-md-none.d-inline-block
@@ -73,7 +75,7 @@ block content
               img(src=assetsUrl + "unity/images/hero-figure.png").hero-figure
 
           .col-md-12
-            a(href="#price-study").primary-btn.brand-btn.d-block.d-md-none.scroll-down Записаться на курс
+            a(href="#price-study").primary-btn.brand-btn.d-block.d-md-none.scroll-down Получить бесплатный урок и консультацию
             ul.additional-info
               li
                 |Длительность: <span>3 месяца</span>
@@ -241,7 +243,7 @@ block content
               p С которой уже можно начинать карьеру в геймдеве
 
           .col-md-12.text-center
-            a(href="#want-study").primary-btn.brand-btn.popup-modal Записаться на курс или получить бесплатную консультацию
+            a(href="#want-study").primary-btn.brand-btn.popup-modal Получить бесплатный урок и консультацию
 
     // Program
     section.program
@@ -395,23 +397,24 @@ block content
               .cost-with-sale
                 |Стоимость <br> обучения <span>−25%<i>при оплате <br> до 1 июня</i></span>
 
-              .current-price 2 417 ₽ <span>/ месяц*</span>
+              .current-price <span>от</span> 2 417 ₽ <span>/ месяц*</span>
 
               //.current-price 29 000 ₽
               //.past-price 39 000 ₽
 
               .price-part
-                p Полная цена:
-                p.one-time-price 29 000 ₽ <span>39 000₽</span>
+                //p Полная цена:
+                //p.one-time-price 29 000 ₽ <span>39 000₽</span>
                 p *Рассрочка без процентов и переплат от банка-партнера Тинькофф
 
           .col-md-6
             #price-study.sign-to-course
               .time-course
-                p Старт курса: <span>15 мая</span>
-                p Осталось: <span>12 мест</span>
+                p Старт курса: <span>30 мая</span>
+                p Осталось: <span>10 мест</span>
 
-              .title-form Записаться на курс или получить бесплатную консультацию
+              //.title-form Записаться на курс или получить бесплатную консультацию
+              .title-form Получить бесплатную консультацию
               .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
 
               form(name="getCourse" , method="post" , action=amoServiceUrl)#getCourse.free-consult
