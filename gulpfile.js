@@ -43,7 +43,7 @@ function scripts() {
 
 /* Images */
 function imageMinify() {
-  return gulp.src('src/**/**/**/*.{gif,png,jpg,svg,webp,ico}')
+  return gulp.src('src/**/**/**/*.{gif,png,jpg,jpeg,svg,webp,ico}')
     /*.pipe(imagemin([
       //imagemin.gifsicle({ interlaced: true }),
       imagemin.mozjpeg({
