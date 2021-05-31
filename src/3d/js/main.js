@@ -83,12 +83,24 @@
 
   // Popup with video
   $('.popup-youtube').magnificPopup({
-    disableOn: 700,
     type: 'iframe',
+    markup: '<div class="mfp-iframe-scaler">' +
+      '<div class="mfp-close"></div>' +
+      '<iframe class="mfp-iframe" frameborder="0" allow="autoplay"></iframe>' +
+      '</div>',
     mainClass: 'mfp-fade',
     removalDelay: 160,
     preloader: false,
-    fixedContentPos: true
+    fixedContentPos: true,
+    iframe: {
+      patterns: {
+        youtube: {
+          index: 'youtube.com',
+          id: 'v=',
+          src: 'https://www.youtube.com/embed/%id%?rel=0&autoplay=1'
+        }
+      }
+    },
   });
 
   $('.popup-modal').magnificPopup({
