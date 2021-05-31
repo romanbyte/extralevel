@@ -1,0 +1,25 @@
+---
+name: 'deploy'
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Push to deployme
+        uses: dokku/github-action@master
+        with:
+          # specify the `main` branch as the remote branch to push to
+          branch: 'develop'
+          git_remote_url: 'ssh://deployme@5.188.128.195:extralevel-static-dev'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
