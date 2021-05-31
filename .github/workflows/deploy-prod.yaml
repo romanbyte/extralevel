@@ -1,11 +1,11 @@
 ---
-name: 'deploy'
+name: 'deploy-prpd'
 
 # yamllint disable-line rule:truthy
 on:
   push:
     branches:
-      - develop
+      - master
 
 jobs:
   deploy:
@@ -20,6 +20,6 @@ jobs:
         uses: dokku/github-action@master
         with:
           # specify the `main` branch as the remote branch to push to
-          branch: 'develop'
-          git_remote_url: 'ssh://deployme@5.188.128.195/extralevel-static-dev'
+          branch: 'master'
+          git_remote_url: 'ssh://deployme@5.188.128.195/extralevel-static-prod'
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
