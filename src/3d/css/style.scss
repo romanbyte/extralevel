@@ -466,6 +466,7 @@ h5 {
 		top: calc(100% - 115px);
 		right: -30px;
 		background: url(../images/slider-figure.svg) no-repeat;
+		pointer-events: none;
 	}
 }
 
