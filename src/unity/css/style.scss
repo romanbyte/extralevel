@@ -1781,6 +1781,14 @@ button.mfp-close {
 		display: block;
 	}*/
 
+	header {
+		position: relative;
+	}
+
+	.intro {
+		margin-top: -1px;
+	}
+
 }
 
 @media screen and (max-width: 380px) {
