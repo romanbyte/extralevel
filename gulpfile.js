@@ -9,7 +9,7 @@ const browserSync = require('browser-sync')
 const imagemin = require('gulp-imagemin')
 const svgSprite = require('gulp-svg-sprite')
 const del = require('del');
-const assetsURL = process.env.NODE_ENV === "production" ? '' : ''
+const assetsURL = process.env.NODE_ENV === "production" ? '/' : '/'
 const amoServiceURL = process.env.AMO_SERVICE_URL || "http://extralevel-amo-service.d-01.srvdev.ru/applications"
 
 /* Complete SASS */
@@ -63,7 +63,6 @@ function imageMinify() {
 }
 
 /* SVG sprite */
-
 const PROJECT_NAME_REGEXP = new RegExp('/src/([^/]+)/images/sprite/');
 
 function getProjectName(path) {
@@ -73,22 +72,22 @@ function getProjectName(path) {
 }
 
 function spriteSVG() {
-  let projectName = ""
-  return gulp.src('src/**/**/**/sprite/*.svg') // svg files for sprite
-    .pipe(tap(function (file, t) {
-      projectName = getProjectName(file.path)
-    }))
-    .pipe(svgSprite({
-      mode: {
-        stack: {
-          sprite: `../sprite.svg` //sprite file name
-        }
-      }
-    }))
-    .pipe(gulp.dest(function (file) {
-      return `public/${projectName}/images/`
-    }))
-    .pipe(browserSync.reload({stream: true}))
+  // let projectName = ""
+  // return gulp.src('src/**/**/**/sprite/*.svg') // svg files for sprite
+  //   .pipe(tap(function (file, t) {
+  //     projectName = getProjectName(file.path)
+  //   }))
+  //   .pipe(svgSprite({
+  //     mode: {
+  //       stack: {
+  //         sprite: `../sprite.svg` //sprite file name
+  //       }
+  //     }
+  //   }))
+  //   .pipe(gulp.dest(function (file) {
+  //     return `public/${projectName}/images/`
+  //   }))
+  //   .pipe(browserSync.reload({stream: true}))
 }
 
 function fonts() {
