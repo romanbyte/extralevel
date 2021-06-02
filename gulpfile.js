@@ -72,22 +72,22 @@ function getProjectName(path) {
 }
 
 function spriteSVG() {
-  // let projectName = ""
-  // return gulp.src('src/**/**/**/sprite/*.svg') // svg files for sprite
-  //   .pipe(tap(function (file, t) {
-  //     projectName = getProjectName(file.path)
-  //   }))
-  //   .pipe(svgSprite({
-  //     mode: {
-  //       stack: {
-  //         sprite: `../sprite.svg` //sprite file name
-  //       }
-  //     }
-  //   }))
-  //   .pipe(gulp.dest(function (file) {
-  //     return `public/${projectName}/images/`
-  //   }))
-  //   .pipe(browserSync.reload({stream: true}))
+  let projectName = ""
+  return gulp.src('src/**/**/**/sprite/*.svg') // svg files for sprite
+    .pipe(tap(function (file, t) {
+      projectName = getProjectName(file.path)
+    }))
+    .pipe(svgSprite({
+      mode: {
+        stack: {
+          sprite: `../sprite.svg` //sprite file name
+        }
+      }
+    }))
+    .pipe(gulp.dest(function (file) {
+      return `public/${projectName}/images/`
+    }))
+    .pipe(browserSync.reload({stream: true}))
 }
 
 function fonts() {
