@@ -16,7 +16,7 @@
     $('.hero-person').css('top' , - $(window).scrollTop()*0.3);
     //$('.hero-bg').css('top' , - $(window).scrollTop()*0.2);
 
-    if ($(window).width() <= 480) {
+    /*if ($(window).width() <= 480) {
       if ($(window).scrollTop() >= 0 && $(window).scrollTop() < top_position_1) {
         $('.wrap-fixed-button').hide();
       } else if ($(window).scrollTop() > top_position_1 - 200 && $(window).scrollTop() < top_position_1 - 200 + $('#what-learn-row').height()) {
@@ -28,7 +28,7 @@
       } else {
         $('.wrap-fixed-button').show();
       }
-    }
+    }*/
 
   });
 

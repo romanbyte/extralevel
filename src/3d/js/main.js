@@ -24,17 +24,17 @@
 
   $(window).on('scroll' , function() {
 
-      if ($(window).scrollTop() >= top_position) {
+      /*if ($(window).scrollTop() >= top_position) {
         $('header').addClass('fixed');
       } else {
         $('header').removeClass('fixed');
-      }
+      }*/
 
       if ( $(window).scrollTop() >=  top_position_2) {
         $('.how-study').addClass('transition');
       }
 
-      if ($(window).width() <= 480) {
+      /*if ($(window).width() <= 480) {
         if ($(window).scrollTop() >= 0 && $(window).scrollTop() < top_position_3) {
           $('.wrap-fixed-button').hide();
         } else if ($(window).scrollTop() > top_position_3 && $(window).scrollTop() < top_position_3 + $('.find-way').height()) {
@@ -47,7 +47,7 @@
           $('.wrap-fixed-button').show();
         }
 
-      }
+      }*/
 
   });
 
