@@ -1131,9 +1131,10 @@ button.mfp-close {
   text-align: center;
   bottom: 0;
   z-index: 3;
-  height: 80px;
+  height: 70px;
   	.wrap {
   		max-width: 1100px;
+  		height: 70px;
   		margin: 0 auto;
   		display: flex;
 		  align-items: center;
@@ -1150,19 +1151,18 @@ button.mfp-close {
   			}
   	}
   	a {
-  		height: 66px;
-  		padding: 5px 24px;
+  		height: 56px;
+  		padding: 0 24px;
   		border-radius: 250px;
   		font-size: 24px;
-  		line-height: 32px;
   		text-decoration: none;
   		background: #fff;
   		text-transform: uppercase;
   		color: $default-text-color;
   		font-weight: 700;
-  		line-height: 56px;
+  		line-height: 58px;
   			img {
-  				vertical-align: middle;
+  				vertical-align: top;
   				margin-right: 10px;
   			}
   	}
@@ -1543,12 +1543,12 @@ button.mfp-close {
 @media screen and (max-width: 768px) {
 
 	.wrap-fixed-button {
-		height: 62px;
+		height: 60px;
 		padding: 0 16px;
 		text-align: left;
 			.wrap {
 				max-width: 400px;
-				height: 62px;
+				height: 60px;
 			}
 			img {
 				display: none;
@@ -1560,12 +1560,11 @@ button.mfp-close {
 			}
 			a {
 				height: 40px;
+				margin-right: 40px;
 				font-size: 14px;
-				line-height: 30px;
+				line-height: 40px;
 					img {
-						display: inline-block;
-						width: 30px;
-						height: 30px;
+						display: none;
 					}
 			}
 	}

@@ -24,10 +24,36 @@ footer
 
 
 #want-study.mfp-hide.white-popup-block
-  .title-popup ПЕРВЫЙ МОДУЛЬ КУРСА БЕСПЛАТНО
+  .title-popup ПОДОБРАТЬ КУРС ИЛИ ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
   .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
 
   form(name="getCourse-popup" , method="post" , action=amoServiceUrl)#getCourse-popup.popup-form
+    .form-row
+      input(type="text" , name="name" , required)
+      b.placeholder Имя
+      label.error-label Некорректные данные
+    .form-row
+      input(type="phone" , name="phone" , required)
+      b.placeholder Телефон
+      label.error-label Некорректные данные
+    .form-row
+      input(type="email" , name="email" , required)
+      b.placeholder Email
+      label.error-label Некорректные данные
+
+    input(name="course" type="hidden" value="769413")
+    input(name="page" type="hidden" value="3D моделирование с нуля")
+    input(name="source" type="hidden" value="741895")
+
+    .form-row.text-center: button(type="submit").primary-btn.brand-btn Отправить
+
+  p.personal-data Нажимая на кнопку, я соглашаюсь <br> на <a href="#{assetsUrl}privacy_policy.pdf" target="_blank">обработку персональных данных.</a>
+
+#free-study.mfp-hide.white-popup-block
+  .title-popup ПЕРВЫЙ МОДУЛЬ КУРСА БЕСПЛАТНО
+  .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
+
+  form(name="getCourse-free" , method="post" , action=amoServiceUrl)#getCourse-free.popup-form
     .form-row
       input(type="text" , name="name" , required)
       b.placeholder Имя
@@ -47,4 +73,4 @@ footer
 
     .form-row.text-center: button(type="submit").primary-btn.brand-btn  Получить
 
-  p.personal-data Нажимая на кнопку, я соглашаюсь <br> на <a href="#{assetsUrl}privacy_policy.pdf" target="_blank">обработку персональных данных.
+  p.personal-data Нажимая на кнопку, я соглашаюсь <br> на <a href="#{assetsUrl}privacy_policy.pdf" target="_blank">обработку персональных данных.</a>
