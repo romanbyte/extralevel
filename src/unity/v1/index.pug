@@ -13,7 +13,12 @@ block content
 
     // Fixed button on mobile
     .wrap-fixed-button
-      a(href="#price-study").primary-btn.brand-btn.scroll-down Получить консультацию
+      .wrap
+        img(src="unity/images/fixed-img.svg")
+        p Первый модуль курса - <span>бесплатно!</span>
+        a(href="#free-study").popup-modal
+          img(src="unity/images/btn-icon.svg")
+          |Получить
 
     // Header
     header
@@ -47,7 +52,7 @@ block content
     // Intro
     section.intro
       .container.position-relative
-        .sale
+        //.sale
           span 25%
           |Скидка при <br> оплате до <br> 31 мая
 
@@ -395,7 +400,7 @@ block content
           .col-md-6
             .cost
               .cost-with-sale
-                |Стоимость <br> обучения <span>−25%<i>при оплате <br> до 1 июня</i></span>
+                |Стоимость <br> обучения
 
               .current-price <span>от</span> 2 417 ₽ <span>/ месяц*</span>
 
@@ -410,11 +415,11 @@ block content
           .col-md-6
             #price-study.sign-to-course
               .time-course
-                p Старт курса: <span>30 мая</span>
+                p Старт курса: <span>15 июня</span>
                 p Осталось: <span>10 мест</span>
 
               //.title-form Записаться на курс или получить бесплатную консультацию
-              .title-form Получить бесплатную консультацию
+              .title-form Получить консультацию и первый модуль курса бесплатно
               .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
 
               form(name="getCourse" , method="post" , action=amoServiceUrl)#getCourse.free-consult
@@ -424,10 +429,11 @@ block content
                 .form-row
                   input(type="phone" , name="phone" , placeholder="Телефон" , required)
                   label.error-label Некорректные данные
-                .form-row
+                //.form-row
                   input(type="email" , name="email" , placeholder="Email" , required)
                   label.error-label Некорректные данные
 
+                input(name="email" type="hidden" value="empty@mail.com")
                 input(name="course" type="hidden" value="740185")
                 input(name="page" type="hidden" value="Разработка игр на Unity для начинающих")
                 input(name="source" type="hidden" value="741895")

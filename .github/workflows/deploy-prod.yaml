@@ -1,5 +1,5 @@
 ---
-name: 'deploy-prpd'
+name: 'deploy-prod'
 
 # yamllint disable-line rule:truthy
 on:

@@ -24,17 +24,17 @@
 
   $(window).on('scroll' , function() {
 
-      if ($(window).scrollTop() >= top_position) {
+      /*if ($(window).scrollTop() >= top_position) {
         $('header').addClass('fixed');
       } else {
         $('header').removeClass('fixed');
-      }
+      }*/
 
       if ( $(window).scrollTop() >=  top_position_2) {
         $('.how-study').addClass('transition');
       }
 
-      if ($(window).width() <= 480) {
+      /*if ($(window).width() <= 480) {
         if ($(window).scrollTop() >= 0 && $(window).scrollTop() < top_position_3) {
           $('.wrap-fixed-button').hide();
         } else if ($(window).scrollTop() > top_position_3 && $(window).scrollTop() < top_position_3 + $('.find-way').height()) {
@@ -47,7 +47,7 @@
           $('.wrap-fixed-button').show();
         }
 
-      }
+      }*/
 
   });
 
@@ -240,6 +240,7 @@
 
   var $getCorseForm = $('form[name="getCourse"]');
   var $getCorseFormPopup = $('form[name="getCourse-popup"]');
+  var $getCorseFormFree = $('form[name="getCourse-free"]');
 
   if ($getCorseForm.length) {
     $getCorseForm.each(function () {
@@ -295,6 +296,38 @@
           $getCorseFormPopup.find('input').removeClass('active');
           $getCorseFormPopup.hide();
           $getCorseFormPopup.next('p').hide();
+          // TODO по событию success вывести сообщение об успешной отправки формы
+        }).fail(function() {
+          console.log('fail');
+          // TODO по событию fail вывести сообщение об ошибке
+        });
+      });
+    })
+  }
+
+  if ($getCorseFormFree.length) {
+    $getCorseFormFree.each(function () {
+      var $this = $(this);
+
+      $this.submit(function(e) {
+
+        $this.find('button[type="submit"]').attr('disabled' , 'disabled');
+
+        e.preventDefault();
+
+        $.ajax({
+          contentType: "application/json",
+          type: $this.attr('method'),
+          url: $this.attr('action'),
+          data: createAMOJSON($this)
+        }).done(function() {
+          console.log('success');
+          $('.white-popup-block').find('.success').show();
+          $getCorseFormFree.trigger('reset');
+          $getCorseFormFree.find('button[type="submit"]').removeAttr('disabled');
+          $getCorseFormFree.find('input').removeClass('active');
+          $getCorseFormFree.hide();
+          $getCorseFormFree.next('p').hide();
           // TODO по событию success вывести сообщение об успешной отправки формы
         }).fail(function() {
           console.log('fail');

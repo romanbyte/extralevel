@@ -13,7 +13,12 @@ block content
 
     // Fixed button on mobile
     .wrap-fixed-button
-      a(href="#price-study").primary-btn.brand-btn.scroll-down Получить консультацию
+      .wrap
+        img(src="3d/images/fixed-img.svg")
+        p Первый модуль курса - <span>бесплатно!</span>
+        a(href="#free-study").popup-modal
+          img(src="3d/images/btn-icon.svg")
+          |Получить
 
     // Header
     header
@@ -411,6 +416,7 @@ block content
 
               .price-part
                 p Полная цена:
+
                 p.one-time-price 21 600 ₽
                 p *Рассрочка без процентов и переплат от банка-партнера Тинькофф
 

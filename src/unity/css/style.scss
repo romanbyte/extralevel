@@ -141,21 +141,10 @@ header {
 	font-family: 'Roboto';
 	padding: 30px 0;
 	background: $dark-color;
-	position: fixed;
+	/*position: fixed;*/
   width: 100%;
   top: 0;
   z-index: 3;
-}
-
-.wrap-fixed-button {
-	background: #fff;
-  position: fixed;
-  width: 100%;
-  text-align: center;
-  bottom: 0;
-  z-index: 3;
-  padding: 10px 0;
-  display: none;
 }
 
 	nav {
@@ -245,7 +234,7 @@ header {
 
 // Intro
 .intro {
-	margin-top: 100px;
+	/*margin-top: 100px;*/
 	padding: 60px 0;
 	background: $dark-color;
 	color: #fff;
@@ -1135,6 +1124,50 @@ button.mfp-close {
 	right: 15px;
 }
 
+.wrap-fixed-button {
+	background: #F5B425;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  z-index: 3;
+  height: 70px;
+  	.wrap {
+  		max-width: 1100px;
+  		height: 70px;
+  		margin: 0 auto;
+  		display: flex;
+		  align-items: center;
+		  justify-content: space-between;
+  	}
+  	p {
+  		margin: 0;
+  		text-transform: uppercase;
+  		font-weight: 700;
+  		font-size: 30px;
+  		line-height: 40px;
+  			span {
+  				color: #D05FDC;
+  			}
+  	}
+  	a {
+  		height: 56px;
+  		padding: 0 24px;
+  		border-radius: 250px;
+  		font-size: 24px;
+  		text-decoration: none;
+  		background: #fff;
+  		text-transform: uppercase;
+  		color: $default-text-color;
+  		font-weight: 700;
+  		line-height: 58px;
+  			img {
+  				vertical-align: top;
+  				margin-right: 10px;
+  			}
+  	}
+}
+
 // Responsive styles
 @media (min-width: 1400px) {
 
@@ -1509,6 +1542,33 @@ button.mfp-close {
 
 @media screen and (max-width: 768px) {
 
+	.wrap-fixed-button {
+		height: 60px;
+		padding: 0 16px;
+		text-align: left;
+			.wrap {
+				max-width: 400px;
+				height: 60px;
+			}
+			img {
+				display: none;
+			}
+			p {
+				font-size: 14px;
+				line-height: 18px;
+				max-width: 50%;
+			}
+			a {
+				height: 40px;
+				margin-right: 40px;
+				font-size: 14px;
+				line-height: 40px;
+					img {
+						display: none;
+					}
+			}
+	}
+
 	header {
 		padding: 20px 0;
 	}
@@ -1664,9 +1724,9 @@ button.mfp-close {
 		top: 80px;
 	}
 
-	.intro {
+	/*.intro {
 		margin-top: 80px;
-	}
+	}*/
 
 	.social-nav {
   	margin-top: 50px;
@@ -1777,9 +1837,13 @@ button.mfp-close {
 		}
 	}
 
-	/*.wrap-fixed-button {
-		display: block;
-	}*/
+	header {
+		position: relative;
+	}
+
+	.intro {
+		margin-top: -1px;
+	}
 
 }
 
