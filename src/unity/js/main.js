@@ -6,9 +6,9 @@
   });
 
   // Parallax effect for inner intro section
-  var top_position = $('#price-study').offset().top;
-  var top_position_1 = $('#what-learn-row').offset().top;
-  var top_position_2 = $('.how-study').offset().top;
+  //var top_position = $('#price-study').offset().top;
+  //var top_position_1 = $('#what-learn-row').offset().top;
+  //var top_position_2 = $('.how-study').offset().top;
 
   $(window).on('scroll' , function() {
 
