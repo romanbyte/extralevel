@@ -7,7 +7,7 @@ $(function () {
       },
         type:'inline'
       });
-  }, 10000);
+  }, 15000);
 
   // Program list
   $('.program-list .program-list-item').slice(7).hide();

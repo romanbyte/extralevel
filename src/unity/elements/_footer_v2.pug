@@ -43,37 +43,11 @@ footer
       b.placeholder Email
       label.error-label Некорректные данные
 
-    input(name="course" type="hidden" value="769413")
-    input(name="page" type="hidden" value="3D моделирование с нуля")
+    input(name="course" type="hidden" value="740185")
+    input(name="page" type="hidden" value="Разработка игр на Unity для начинающих")
     input(name="source" type="hidden" value="741895")
 
     .form-row.text-center: button(type="submit").primary-btn.brand-btn Отправить
-
-  p.personal-data Нажимая на кнопку, я соглашаюсь <br> на <a href="#{assetsUrl}privacy_policy.pdf" target="_blank">обработку персональных данных.</a>
-
-#free-study.mfp-hide.white-popup-block
-  .title-popup ПЕРВЫЙ МОДУЛЬ КУРСА БЕСПЛАТНО
-  .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
-
-  form(name="getCourse-free" , method="post" , action=amoServiceUrl)#getCourse-free.popup-form
-    .form-row
-      input(type="text" , name="name" , required)
-      b.placeholder Имя
-      label.error-label Некорректные данные
-    .form-row
-      input(type="phone" , name="phone" , required)
-      b.placeholder Телефон
-      label.error-label Некорректные данные
-    .form-row
-      input(type="email" , name="email" , required)
-      b.placeholder Email
-      label.error-label Некорректные данные
-
-    input(name="course" type="hidden" value="769413")
-    input(name="page" type="hidden" value="Первый модуль курса бесплатно")
-    input(name="source" type="hidden" value="741895")
-
-    .form-row.text-center: button(type="submit").primary-btn.brand-btn  Получить
 
   p.personal-data Нажимая на кнопку, я соглашаюсь <br> на <a href="#{assetsUrl}privacy_policy.pdf" target="_blank">обработку персональных данных.</a>
 
@@ -94,7 +68,7 @@ footer
             .title-form Получить отчет о самых востребованных профессиях геймдева - <span>бесплатно!</span>
             .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
 
-            form(name="getCourse" , method="post" , action=amoServiceUrl)#getReport.popup-form
+            form(name="getReport-popup" , method="post" , action=amoServiceUrl)#getReport-popup.popup-form
               .form-row
                 input(type="text" , name="name" , required)
                 b.placeholder Имя
@@ -105,8 +79,8 @@ footer
                 b.placeholder Телефон
                 label.error-label Некорректные данные
 
-              input(name="course" type="hidden" value="769413")
-              input(name="page" type="hidden" value="3D моделирование с нуля")
+              input(name="course" type="hidden" value="740185")
+              input(name="page" type="hidden" value="ВЫБЕРИТЕ СВОЮ БУДУЩУЮ ПРОФЕССИЮ!")
               input(name="source" type="hidden" value="741895")
 
               .form-row: button(type="submit").primary-btn.brand-btn ОТПРАВИТЬ

@@ -52,7 +52,7 @@
 
   // Example of works slider
   $('.example-slider').slick({
-    infinite: false,
+    infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
@@ -236,7 +236,7 @@
 
   var $getCorseForm = $('form[name="getCourse"]');
   var $getCorseFormPopup = $('form[name="getCourse-popup"]');
-  var $getCorseFormFree = $('form[name="getCourse-free"]');
+  var $getReport_popup = $('form[name="getReport-popup"]');
 
   if ($getCorseForm.length) {
     $getCorseForm.each(function () {
@@ -301,8 +301,8 @@
     })
   }
 
-  if ($getCorseFormFree.length) {
-    $getCorseFormFree.each(function () {
+  if ($getReport_popup.length) {
+    $getReport_popup.each(function () {
       var $this = $(this);
 
       $this.submit(function(e) {
@@ -319,11 +319,11 @@
         }).done(function() {
           console.log('success');
           $('.white-popup-block').find('.success').show();
-          $getCorseFormFree.trigger('reset');
-          $getCorseFormFree.find('button[type="submit"]').removeAttr('disabled');
-          $getCorseFormFree.find('input').removeClass('active');
-          $getCorseFormFree.hide();
-          $getCorseFormFree.next('p').hide();
+          $getReport_popup.trigger('reset');
+          $getReport_popup.find('button[type="submit"]').removeAttr('disabled');
+          $getReport_popup.find('input').removeClass('active');
+          $getReport_popup.hide();
+          $getReport_popup.next('p').hide();
           // TODO по событию success вывести сообщение об успешной отправки формы
         }).fail(function() {
           console.log('fail');
