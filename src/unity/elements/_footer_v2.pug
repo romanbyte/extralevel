@@ -76,3 +76,39 @@ footer
     .form-row.text-center: button(type="submit").primary-btn.brand-btn  Получить
 
   p.personal-data Нажимая на кнопку, я соглашаюсь <br> на <a href="#{assetsUrl}privacy_policy.pdf" target="_blank">обработку персональных данных.</a>
+
+// Choice
+#choice-popup.mfp-hide.white-popup-block.choice
+  .container
+    .section-title
+      h2 Выберите свою будущую профессию!
+
+    .wrap-report
+      .row
+        .col-lg-6.col-12
+          .img-report
+            img(src=assetsUrl + "unity/images/img-report.png")
+
+        .col-lg-6
+          #get-report.sign-to-course
+            .title-form Получить отчет о самых востребованных профессиях геймдева - <span>бесплатно!</span>
+            .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
+
+            form(name="getCourse" , method="post" , action=amoServiceUrl)#getReport.popup-form
+              .form-row
+                input(type="text" , name="name" , required)
+                b.placeholder Имя
+                label.error-label Некорректные данные
+
+              .form-row
+                input(type="phone" , name="phone" , required)
+                b.placeholder Телефон
+                label.error-label Некорректные данные
+
+              input(name="course" type="hidden" value="769413")
+              input(name="page" type="hidden" value="3D моделирование с нуля")
+              input(name="source" type="hidden" value="741895")
+
+              .form-row: button(type="submit").primary-btn.brand-btn ОТПРАВИТЬ
+
+            p.personal-data Нажимая на кнопку, я соглашаюсь на <a href="/privacy_policy.pdf" , target="_blank">обработку персональных данных</a>.

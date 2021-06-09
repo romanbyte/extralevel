@@ -46,7 +46,7 @@ block content
 
     // Intro
     section.intro
-      .container.position-relative
+      .container
 
         .row
           .col-md-6
@@ -54,8 +54,8 @@ block content
               //h1 Онлайн-курс <br> по разработке <br> игр на Unity <br> для начинающих
               h1 Онлайн-курс  по <span>разработке игр на Unity</span>
               h4 для начинающих
-              p Вы освоите язык программирования C#, научитесь создавать мобильные игры на популярном игровом движке  Unity, создадите свой первый проект для портфолио и обретете востребованную в геймдеве профессию
-              a(href="#price-study").primary-btn.brand-btn.d-none.d-md-inline-block.scroll-down ПОДОБРАТЬ КУРС
+              p.margin-bottom Вы освоите язык программирования C#, научитесь создавать мобильные игры на популярном игровом движке  Unity, создадите свой первый проект для портфолио и обретете востребованную в геймдеве профессию
+              a(href="#price-study").primary-btn.brand-btn.scroll-down ПОДОБРАТЬ КУРС
               p.gift-img: img(src=assetsUrl + "unity/images/gift.png")
 
           .col-md-6
@@ -69,13 +69,11 @@ block content
               li
                 |Доступ к курсу: <span>навсегда</span>
 
-            //.hero-img
-              img(src=assetsUrl + "unity/images/hero.png").hero-person
-              img(src=assetsUrl + "unity/images/hero-bg.png").hero-bg
-              img(src=assetsUrl + "unity/images/hero-figure.png").hero-figure
+            .hero-img
+              img(src=assetsUrl + "unity/images/intro_v2.png").desktop-img
+              img(src=assetsUrl + "unity/images/intro_v2_mobile.png").mobile-img
 
           .col-md-12
-            a(href="#price-study").primary-btn.brand-btn.d-block.d-md-none.scroll-down ПОДОБРАТЬ КУРС
             ul.additional-info
               li
                 |Длительность: <span>3 месяца</span>
@@ -186,7 +184,7 @@ block content
           h2 Приглашенные эксперты
 
         .row
-          .col-md-4
+          .col-lg-4.col-md-6
             .expert-item
               .expert-item-img
                 img(src=assetsUrl + "unity/images/expert-1.png")
@@ -194,7 +192,7 @@ block content
               p.author-position Enterprise Developer Relations Manager в компании Unity
               p Расскажет о практиках ведущих разработчиков в индустрии, чтобы  вы могли освоить актуальные навыки
 
-          .col-md-4
+          .col-lg-4.col-md-6
             .expert-item
               .expert-item-img
                 img(src=assetsUrl + "unity/images/expert-2.jpg")
@@ -540,7 +538,7 @@ block content
 
       .wrap-report
         .row
-          .col-md-6
+          .col-lg-6.col-12
             .img-report
               img(src=assetsUrl + "unity/images/img-report.png")
 
@@ -575,3 +573,4 @@ block content
 block append scripts
   // Main script
   script(src=assetsUrl + "unity/js/main.js")
+  script(src=assetsUrl + "unity/v2/js/additional.js")
