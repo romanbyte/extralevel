@@ -1242,6 +1242,10 @@ footer {
         .section-title {
           padding-left: 50px;
           max-width: 520px;
+          margin-bottom: 20px;
+            h2 {
+              margin-bottom: 30px;
+            }
         }
         .container {
           padding-left: 0;
@@ -1251,6 +1255,9 @@ footer {
           background: url(../images/close-white.svg) no-repeat;
           background-size: cover;
           opacity: 1;
+        }
+        .sign-to-course {
+          padding: 20px;
         }
     }
 
@@ -1985,6 +1992,25 @@ button.mfp-close {
 
 p.margin-bottom {
   margin-bottom: 35vh;
+}
+
+.white-popup-block.choice {
+  padding-top: 10px;
+    .section-title {
+      margin-bottom: 0;
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+    button[type="submit"] {
+      margin-top: 10px;
+    }
+    .img-report {
+      height: 150px;
+        img {
+          top: 10px;
+        }
+    }
 }
 
 }

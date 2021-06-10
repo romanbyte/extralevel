@@ -237,6 +237,38 @@
   var $getCorseForm = $('form[name="getCourse"]');
   var $getCorseFormPopup = $('form[name="getCourse-popup"]');
   var $getReport_popup = $('form[name="getReport-popup"]');
+  var $getProfession = $('form[name="getProfession"]');
+
+  if ($getProfession.length) {
+    $getProfession.each(function () {
+      var $this = $(this);
+
+      $this.submit(function(e) {
+
+        $this.find('button[type="submit"]').attr('disabled' , 'disabled');
+
+        e.preventDefault();
+
+        $.ajax({
+          contentType: "application/json",
+          type: $this.attr('method'),
+          url: $this.attr('action'),
+          data: createAMOJSON($this)
+        }).done(function() {
+          console.log('success');
+          $('.sign-to-course').find('.success').show();
+          $getProfession.trigger('reset');
+          $getProfession.find('button[type="submit"]').removeAttr('disabled');
+          $getProfession.hide();
+          $getProfession.next('p').hide();
+          // TODO по событию success вывести сообщение об успешной отправки формы
+        }).fail(function() {
+          console.log('fail');
+          // TODO по событию fail вывести сообщение об ошибке
+        });
+      });
+    })
+  }
 
   if ($getCorseForm.length) {
     $getCorseForm.each(function () {

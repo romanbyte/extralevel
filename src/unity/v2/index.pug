@@ -459,6 +459,7 @@ block content
                 input(name="course" type="hidden" value="740185")
                 input(name="page" type="hidden" value="ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ И ПЕРВЫЙ МОДУЛЬ БЕСПЛАТНО")
                 input(name="source" type="hidden" value="741895")
+                input(type="hidden" , name="email" , value="empty@mail.com")
 
                 .form-row: button(type="submit").primary-btn.brand-btn ОТПРАВИТЬ ЗАЯВКУ
               //.free-consult
@@ -541,7 +542,7 @@ block content
               .title-form Получить отчет о самых востребованных профессиях геймдева - <span>бесплатно!</span>
               .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
 
-              form(name="getCourse" , method="post" , action=amoServiceUrl)#getReport.popup-form
+              form(name="getProfession" , method="post" , action=amoServiceUrl)#getReport.popup-form
                 .form-row
                   input(type="text" , name="name" , required)
                   b.placeholder Имя
