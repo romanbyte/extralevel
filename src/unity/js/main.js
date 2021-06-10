@@ -238,6 +238,38 @@
   var $getCorseFormPopup = $('form[name="getCourse-popup"]');
   var $getReport_popup = $('form[name="getReport-popup"]');
   var $getProfession = $('form[name="getProfession"]');
+  var $getCourse_free = $('form[name="getCourse-free"]');
+
+  if ($getCourse_free.length) {
+    $getCourse_free.each(function () {
+      var $this = $(this);
+
+      $this.submit(function(e) {
+
+        $this.find('button[type="submit"]').attr('disabled' , 'disabled');
+
+        e.preventDefault();
+
+        $.ajax({
+          contentType: "application/json",
+          type: $this.attr('method'),
+          url: $this.attr('action'),
+          data: createAMOJSON($this)
+        }).done(function() {
+          console.log('success');
+          $('.white-popup-block').find('.success').show();
+          $getCourse_free.trigger('reset');
+          $getCourse_free.find('button[type="submit"]').removeAttr('disabled');
+          $getCourse_free.hide();
+          $getCourse_free.next('p').hide();
+          // TODO по событию success вывести сообщение об успешной отправки формы
+        }).fail(function() {
+          console.log('fail');
+          // TODO по событию fail вывести сообщение об ошибке
+        });
+      });
+    })
+  }
 
   if ($getProfession.length) {
     $getProfession.each(function () {

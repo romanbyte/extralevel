@@ -12,8 +12,13 @@ block content
   main
 
     // Fixed button on mobile
-    //.wrap-fixed-button
-      a(href="#price-study").primary-btn.brand-btn.scroll-down Получить консультацию
+    .wrap-fixed-button
+      .wrap
+        img(src="../images/fixed-img.svg")
+        p Первый модуль курса - <span>бесплатно!</span>
+        a(href="#free-study").popup-modal
+          img(src="../images/btn-icon.svg")
+          |Получить
 
     // Header
     header
@@ -190,7 +195,7 @@ block content
                 img(src=assetsUrl + "unity/images/expert-1.png")
               .author-name Антон Кругляков
               p.author-position Enterprise Developer Relations Manager в компании Unity
-              p Расскажет о практиках ведущих разработчиков в индустрии, чтобы  вы могли освоить актуальные навыки
+              p Расскажет о практиках ведущих разработчиков в индустрии, чтобы вы могли освоить актуальные навыки
 
           .col-lg-4.col-md-6
             .expert-item
@@ -198,7 +203,7 @@ block content
                 img(src=assetsUrl + "unity/images/expert-2.jpg")
               .author-name Сергей Шапошников
               p.author-position Enterprise Developer Relations Manager в компании Unity
-              p Расскажет о практиках ведущих разработчиков в индустрии, чтобы  вы могли освоить актуальные навыки
+              p Расскажет о практиках ведущих разработчиков в индустрии, чтобы вы могли освоить актуальные навыки
 
 
     // For who
@@ -253,7 +258,7 @@ block content
               .study-number
                 .number 1
               h5 Изучаете <br> тему курса
-              p На курсе будут практические видеоуроки
+              p На курсе будут практические видеоуроки
 
           .col-lg-3.col-md-12
             .study-item
@@ -267,13 +272,13 @@ block content
               .study-number
                 .number 3
               h5 Работаете с наставником
-              p Закрепляете знания и работаете над ошибкам
+              p Закрепляете знания и работаете над ошибкам
 
           .col-lg-3.col-md-12
             .study-item
               .study-number
                 .number 4
-              h5 Получаете геймдизайн- документацию для портфолио
+              h5 Получаете геймдизайн-документацию для портфолио
               p С которой уже можно начинать карьеру в геймдеве
 
           .col-md-12
@@ -349,7 +354,7 @@ block content
               .program-list-item
                 b
                   span 7.
-                  |  Понятие о векторной математике, Quaternions, работа с триггерными функциями
+                  |  Понятие о векторной математике, Quaternions, работа с триггерными функциями
                 |Делаем отскок снарядов от стен
 
               .program-list-item
@@ -556,6 +561,7 @@ block content
                 input(name="course" type="hidden" value="740185")
                 input(name="page" type="hidden" value="Получить отчет о самых востребованных профессиях геймдева - бесплатно!")
                 input(name="source" type="hidden" value="741895")
+                input(type="hidden" , name="email" , value="empty@mail.com")
 
                 .form-row: button(type="submit").primary-btn.brand-btn ОТПРАВИТЬ
 

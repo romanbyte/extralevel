@@ -1367,6 +1367,50 @@ button.mfp-close {
         }
     }
 
+.wrap-fixed-button {
+  background: #F5B425;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  z-index: 3;
+  height: 70px;
+    .wrap {
+      max-width: 1100px;
+      height: 70px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    p {
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 40px;
+        span {
+          color: #D05FDC;
+        }
+    }
+    a {
+      height: 56px;
+      padding: 0 24px;
+      border-radius: 250px;
+      font-size: 24px;
+      text-decoration: none;
+      background: #fff;
+      text-transform: uppercase;
+      color: $default-text-color;
+      font-weight: 700;
+      line-height: 58px;
+        img {
+          vertical-align: top;
+          margin-right: 10px;
+        }
+    }
+}
+
 // Responsive styles
 @media (min-width: 1400px) {
 
@@ -2009,6 +2053,33 @@ p.margin-bottom {
       height: 150px;
         img {
           top: 10px;
+        }
+    }
+}
+
+.wrap-fixed-button {
+  height: 60px;
+  padding: 0 16px;
+  text-align: left;
+    .wrap {
+      max-width: 400px;
+      height: 60px;
+    }
+    img {
+      display: none;
+    }
+    p {
+      font-size: 14px;
+      line-height: 18px;
+      max-width: 50%;
+    }
+    a {
+      height: 40px;
+      margin-right: 40px;
+      font-size: 14px;
+      line-height: 40px;
+        img {
+          display: none;
         }
     }
 }
