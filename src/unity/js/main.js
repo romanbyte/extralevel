@@ -6,9 +6,9 @@
   });
 
   // Parallax effect for inner intro section
-  var top_position = $('#price-study').offset().top;
-  var top_position_1 = $('#what-learn-row').offset().top;
-  var top_position_2 = $('.how-study').offset().top;
+  //var top_position = $('#price-study').offset().top;
+  //var top_position_1 = $('#what-learn-row').offset().top;
+  //var top_position_2 = $('.how-study').offset().top;
 
   $(window).on('scroll' , function() {
 
@@ -52,7 +52,7 @@
 
   // Example of works slider
   $('.example-slider').slick({
-    infinite: false,
+    infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
@@ -68,7 +68,7 @@
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1
         }
       }
@@ -236,7 +236,39 @@
 
   var $getCorseForm = $('form[name="getCourse"]');
   var $getCorseFormPopup = $('form[name="getCourse-popup"]');
-  var $getCorseFormFree = $('form[name="getCourse-free"]');
+  var $getReport_popup = $('form[name="getReport-popup"]');
+  var $getProfession = $('form[name="getProfession"]');
+
+  if ($getProfession.length) {
+    $getProfession.each(function () {
+      var $this = $(this);
+
+      $this.submit(function(e) {
+
+        $this.find('button[type="submit"]').attr('disabled' , 'disabled');
+
+        e.preventDefault();
+
+        $.ajax({
+          contentType: "application/json",
+          type: $this.attr('method'),
+          url: $this.attr('action'),
+          data: createAMOJSON($this)
+        }).done(function() {
+          console.log('success');
+          $('.sign-to-course').find('.success').show();
+          $getProfession.trigger('reset');
+          $getProfession.find('button[type="submit"]').removeAttr('disabled');
+          $getProfession.hide();
+          $getProfession.next('p').hide();
+          // TODO по событию success вывести сообщение об успешной отправки формы
+        }).fail(function() {
+          console.log('fail');
+          // TODO по событию fail вывести сообщение об ошибке
+        });
+      });
+    })
+  }
 
   if ($getCorseForm.length) {
     $getCorseForm.each(function () {
@@ -301,8 +333,8 @@
     })
   }
 
-  if ($getCorseFormFree.length) {
-    $getCorseFormFree.each(function () {
+  if ($getReport_popup.length) {
+    $getReport_popup.each(function () {
       var $this = $(this);
 
       $this.submit(function(e) {
@@ -319,11 +351,11 @@
         }).done(function() {
           console.log('success');
           $('.white-popup-block').find('.success').show();
-          $getCorseFormFree.trigger('reset');
-          $getCorseFormFree.find('button[type="submit"]').removeAttr('disabled');
-          $getCorseFormFree.find('input').removeClass('active');
-          $getCorseFormFree.hide();
-          $getCorseFormFree.next('p').hide();
+          $getReport_popup.trigger('reset');
+          $getReport_popup.find('button[type="submit"]').removeAttr('disabled');
+          $getReport_popup.find('input').removeClass('active');
+          $getReport_popup.hide();
+          $getReport_popup.next('p').hide();
           // TODO по событию success вывести сообщение об успешной отправки формы
         }).fail(function() {
           console.log('fail');

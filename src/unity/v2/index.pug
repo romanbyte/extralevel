@@ -5,14 +5,14 @@ block vars
   - var title ="Онлайн-курс по разработке игр на Unity для начинающих - ExtraLevel"
 
 block append styles
-  link(rel='stylesheet' , href=assetsUrl + "unity/css/style.css")
+  link(rel='stylesheet' , href=assetsUrl + "unity/css/style_v2.css")
 
 block content
   // Main page start
   main
 
     // Fixed button on mobile
-    .wrap-fixed-button
+    //.wrap-fixed-button
       a(href="#price-study").primary-btn.brand-btn.scroll-down Получить консультацию
 
     // Header
@@ -46,19 +46,17 @@ block content
 
     // Intro
     section.intro
-      .container.position-relative
-        .sale
-          span 25%
-          |Скидка при <br> ОПЛАТЕ до <br> 31 мая
+      .container
 
         .row
           .col-md-6
             .intro-description
               //h1 Онлайн-курс <br> по разработке <br> игр на Unity <br> для начинающих
-              h1 Научим зарабатывать на играх
-              h4 Онлайн-курс по разработке игр на Unity
-              p Вы освоите язык программирования C#, научитесь создавать мобильные игры на популярном игровом движке  Unity, создадите свой первый проект для портфолио и обретете востребованную в геймдеве профессию
-              a(href="#price-study").primary-btn.brand-btn.d-none.d-md-inline-block.scroll-down Получить бесплатный урок и консультацию
+              h1 Онлайн-курс по <span>разработке игр на Unity</span>
+              h4 для начинающих
+              p.margin-bottom Вы освоите язык программирования C#, научитесь создавать мобильные игры на популярном игровом движке  Unity, создадите свой первый проект для портфолио и обретете востребованную в геймдеве профессию
+              a(href="#price-study").primary-btn.brand-btn.scroll-down ЗАПИСАТЬСЯ НА КУРС
+              p.gift-img: a(href="#price-study").scroll-down: img(src=assetsUrl + "unity/images/gift.png")
 
           .col-md-6
             ul.additional-info.intro-info.d-md-none.d-inline-block
@@ -67,116 +65,147 @@ block content
               li
                 |Формат лекций: <span>видео</span>
               li
+                |Уровень: <span>с нуля</span>
+              li
                 |Доступ к курсу: <span>навсегда</span>
 
             .hero-img
-              img(src=assetsUrl + "unity/images/hero.png").hero-person
-              img(src=assetsUrl + "unity/images/hero-bg.png").hero-bg
-              img(src=assetsUrl + "unity/images/hero-figure.png").hero-figure
+              img(src=assetsUrl + "unity/images/intro_v2.png").desktop-img
+              img(src=assetsUrl + "unity/images/intro_v2_mobile.png").mobile-img
 
           .col-md-12
-            a(href="#price-study").primary-btn.brand-btn.d-block.d-md-none.scroll-down Получить бесплатный урок и консультацию
             ul.additional-info
               li
                 |Длительность: <span>3 месяца</span>
               li
                 |Формат лекций: <span>видео</span>
               li
+                |Уровень: <span>с нуля</span>
+              li
                 |Доступ к курсу: <span>навсегда</span>
 
-    // What you learn
-    section.what-learn
-      .container.position-relative
-        h2.title-circle: span Чему вы научитесь
-
-        .what-learn-img
-          img(src=assetsUrl + "unity/images/what-learn-img.png")
-          //img(src="unity/images/Book-particles.gif").effect-img
-        #what-learn-row.row
-          .col-lg-9.col-md-12
-            .row
-              .col-md-6.col-lg-4
-                .learn-item
-                  span 01
-                  p Работать с редактором, располагать и перемещать объекты, работать со сценами и префабами
-
-              .col-md-6.col-lg-4
-                .learn-item
-                  span 02
-                  p Создавать игровую логику с помощью компонентов MonoBehaviour.
-
-              .col-md-6.col-lg-4
-                .learn-item
-                  span 03
-                  p Разрабатывать архитектуру игры, взаимодействовать с объектами и скриптами, работать с компонентами
-
-              .col-md-6.col-lg-4
-                .learn-item
-                  span 04
-                  p Понимать и применять паттерны, декомпозировать задачи для выбора оптимального шаблона
-
-              .col-md-6.col-lg-4
-                .learn-item
-                  span 05
-                  p Внедрять и настраивать SDK для монетизации
-
-              .col-md-6.col-lg-4
-                .learn-item
-                  span 06
-                  p Собирать и публиковать игры на мобильных платформах iOS и Android
-
-          h4 И другим необходимым в работе навыкам
-
-          .wrap-video
-            a(href="https://www.youtube.com/watch?v=yDWsu7IyDNc").popup-youtube.d-block
-              img(src=assetsUrl + "unity/images/video.png")
-
-              button.video-play.popup-youtube
-                img(src=assetsUrl + "unity/images/video-btn.png")
-
-    // Author
-    section.author-course
+    // Find way
+    section.find-way
       .container
-        h2 Автор курса
+        .section-title
+          h2 Чему вы научитесь
 
         .row
-          .col-md-6.col-lg-5
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-1.png")
+              p Работать с редактором, располагать и перемещать объекты, работать со сценами и префабами
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-2.png")
+              p Создавать игровую логику с помощью компонентов MonoBehaviour.
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-3.png")
+              p Разрабатывать архитектуру игры, взаимодействовать с объектами и скриптами, работать с компонентами
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-4.png")
+              p Понимать и применять паттерны, декомпозировать задачи для выбора оптимального шаблона
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-5.png")
+              p Внедрять и настраивать SDK для монетизации
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "3d/images/way-6.png")
+              p Собирать и публиковать игры на мобильных платформах iOS и Android
+
+        .wrap-video
+          a(href="https://www.youtube.com/watch?v=yDWsu7IyDNc").popup-youtube.d-block
+            img(src=assetsUrl + "unity/images/video.png")
+
+            a(href="https://www.youtube.com/watch?v=yDWsu7IyDNc").video-play.popup-youtube
+              img(src=assetsUrl + "3d/images/video-btn.png")
+
+    // Progress
+    section.progress-game
+      .container
+        .row
+          .col-md-6
+            .section-title
+              h2 Рынок игр активно развивается
+              p Согласно Global Games Market Report, объём игровой индустрии в 2023 году составит более 200 млрд долларов. В то же время количество игроков перевалит за 3 млрд. Такой быстрый рост рождает спрос на специалистов. Одна из ключевых ролей в игровой индустрии — 3D моделлер.
+
+          .col-md-6
+            .program-figure
+              img(src=assetsUrl + "3d/images/store-figure.svg")
+
+        .row
+          .col-md-4
+            .progress-item
+              p <span>174,9</span> млрд долларов <br> общий объем игровой индустрии за 2020 год, по данным аналитического издания Gamesindustry.biz
+
+          .col-md-4
+            .progress-item
+              p на <span>35%</span> <br> вырос российский игровой рынок в 2020 году, по данным «Коммерсанта»
+
+          .col-md-4
+            .progress-item
+              p <span>60 000  ₽</span> <br> средняя зарплата начинающего 3D моделлера, по данным Hh.ru
+
+    // Author
+    section.author
+      .container
+        .section-title
+          h2 Автор курса
+
+        .row
+          .col-md-5.position-relative
             .author-img
-              img(src=assetsUrl + "unity/images/author.png")
+              img(src=assetsUrl + "unity/images/author-2.png")
 
-          .col-lg-7.col-md-6
-            .author-info
-              h5 Алексей Лукьянов
-              .author-position Lead Developer в Azur Games <br> (Robot Warfare)
-              .author-experience Написал собственный 3D-движок, принимал участие в разработке SDK фреймворков для Unity. Опыт в программировании: 25 лет
+          .col-md-7
+            .author-description
+              .author-name Алексей Лукьянов
+              .author-position Lead Developer в Azur Games (Robot Warfare)
+              blockquote Написал собственный 3D-движок, принимал участие в разработке SDK фреймворков для Unity.  Опыт в программировании:  25 лет
 
-        .experts
-          h3 Приглашенные эксперты
+    // Experts
+    section.experts
+      .container
+        .section-title
+          h2 Приглашенные эксперты
 
-          //.experts-slider
-          .row
+        .row
+          .col-lg-4.col-md-6
+            .expert-item
+              .expert-item-img
+                img(src=assetsUrl + "unity/images/expert-1.png")
+              .author-name Антон Кругляков
+              p.author-position Enterprise Developer Relations Manager в компании Unity
+              p Расскажет о практиках ведущих разработчиков в индустрии, чтобы  вы могли освоить актуальные навыки
 
-            .col-lg-6.col-md-6
-              .expert-item
-                .expert-img
-                  img(src=assetsUrl + "unity/images/expert.png")
-                h5 Антон Кругляков
-                .author-position Enterprise Developer Relations Manager в компании Unity
-                p Расскажет о практиках ведущих разработчиков в индустрии, чтобы вы могли освоить актуальные навыки
+          .col-lg-4.col-md-6
+            .expert-item
+              .expert-item-img
+                img(src=assetsUrl + "unity/images/expert-2.jpg")
+              .author-name Сергей Шапошников
+              p.author-position Enterprise Developer Relations Manager в компании Unity
+              p Расскажет о практиках ведущих разработчиков в индустрии, чтобы  вы могли освоить актуальные навыки
 
 
-            .col-lg-6.col-md-6
-              .expert-item
-                .expert-img
-                  img(src=assetsUrl + "unity/images/expert-1.png")
-                h5 Сергей Шапошников
-                .author-position Team Lead Unity в Crazy Panda
-                p Расскажет от том, как устроены рендеринг и шейдеры в Unity, а также поможет с оптимизацией вашего проекта
-
-    // For
+    // For who
     section.for-who
       .container
-        h2 Кому подойдет этот курс
+        .section-title
+          h2 Наш курс подойдет
 
         .row
           .col-md-6
@@ -184,200 +213,24 @@ block content
               .who-img
                 img(src=assetsUrl + "unity/images/who-1.png")
               h5 Любителям игр без опыта работы в геймдеве
-              p Вы любите видеоигры с самого детства и всегда мечтали о работе в игровой индустрии, но тогда на рынке не было необходимого образования
+              p Вы прирожденный игрок и чувствуете, что это могло бы стать вашей профессией, но вам пока не хватает необходимых знаний и опыта
 
           .col-md-6
             .who-item
               .who-img
-                img(src=assetsUrl + "unity/images/who-2.png")
+                img(src=assetsUrl + "3d/images/who-2.png")
               h5 Тем, кто хочет сменить профессию
-              p Вы уже работаете в схожей или совершенно другой сфере, но хотите поменять ее на геймдев, чтобы это стало вашей основной профессией
-
-          .col-md-12
-            h4.two-circle: span Персональный подход к каждому студенту поможет достичь <br> лучшего результата
-            ul.personal-list
-              li Вы получаете доступ к закрытому чату в «Телеграме» с другими студентами и кураторами, которым всегда можно задать вопрос
-              li Кураторы проверяют домашние задания и дают фидбэк
-              li В конце курса вы попадаете в практическую лабораторию — акселератор — с менторами, которые помогут вам объединиться с другими студентами в совместные проекты
-
-    // How study
-    section.how-study
-      .container
-        h2 Как проходит обучение
-
-        .row
-          .col-lg-3.col-md-6
-            .study-item
-              .study-img
-                img(src=assetsUrl + "unity/images/study-1.png")
-              .study-title
-                span 1
-                |Изучаете <br> тему
-              p На курсе будут практические видеоуроки
-
-          .col-lg-3.col-md-6
-            .study-item
-              .study-img
-                img(src=assetsUrl + "unity/images/study-2.png")
-              .study-title
-                span 2
-                |Выполняете домашние задания
-              p В удобном для вас темпе
-
-          .col-lg-3.col-md-6
-            .study-item
-              .study-img
-                img(src=assetsUrl + "unity/images/study-3.png")
-              .study-title
-                span 3
-                |Работаете с наставником
-              p Закрепляете знания и работаете над ошибками
-
-          .col-lg-3.col-md-6
-            .study-item
-              .study-img
-                img(src=assetsUrl + "unity/images/study-4.png")
-              .study-title
-                span 4
-                |Получаете игру для портфолио
-              p С которой уже можно начинать карьеру в геймдеве
-
-          .col-md-12.text-center
-            a(href="#want-study").primary-btn.brand-btn.popup-modal Получить бесплатный урок и консультацию
-
-    // Program
-    section.program
-      .container
-        .row.center
-          .col-lg-6.col-6
-            h2.title-circle: span Программа
-
-          .col-lg-6.col-6
-            .program-effect
-              img(src=assetsUrl + "unity/images/program-img.png")
-              img(src=assetsUrl + "unity/images/Cristal_particles.gif").effect-img
-
-        .row.align
-          .col-md-6
-            .lesson-desc
-              p Вас ждут онлайн-лекции и практические задания на основе реальных кейсов
-          .col-md-3.col-sm-6
-            .lesson-desc.green
-              p 17 <br> тематических модулей
-          .col-md-3.col-sm-6
-            .lesson-desc.green
-              p 60 <br> онлайн-уроков
-
-          .col-md-12
-            .program-list
-              .program-list-item
-                b
-                  span 1
-                  |  Введение в Unity, часть 1:
-                |Установка, знакомство с интерфейсом и инструментами, установка Visual Studio IDE
-
-              .program-list-item
-                b
-                  span 2
-                  |  Введение в Unity, часть 2:
-                |Гейм объекты, компоненты, камера, UI Canvas
-
-              .program-list-item
-                b
-                  span 3
-                  |  Введение в программирование.
-                |Основы C# — переменные, операторы присваивания, ветвления, циклы. Типы данных, коллекции
-
-              .program-list-item
-                b
-                  span 4
-                  |  Компоненты MonoBehaviour, event функции Unity, публичные поля.
-                |Методы. Создаем свой первый компонент
-
-              .program-list-item
-                b
-                  span 5
-                  |  Работа с пользовательским вводом.
-                |Заставляем персонажа двигаться и учим его стрелять
-
-              .program-list-item
-                b
-                  span 6
-                  |  Основы физики в Unity. Коллайдеры, rigidbody, настройки физики.
-                |Определяем попадания
-
-              .program-list-item
-                b
-                  span 7
-                  |  Понятие о векторной математике, Quaternions, работа с триггерными функциями.
-                |Делаем отскок снарядов от стен
-
-              .program-list-item
-                b
-                  span 8
-                  |  Изучение компонентной модели, взаимодействие скриптов, объектная модель компонентов.
-                |Создаем компонент «Противник» и наносим по нему урон. Делаем спецэффект попадания
-
-              .program-list-item
-                b
-                  span 9
-                  |  Работа со звуком. Audio Listener и Audio Source.
-                |Добавляем в игру звук
-
-              .program-list-item
-                b
-                  span 10
-                  |  AI противников.
-                |Понятие о конечных автоматах и машинах состояний. Заставляем противников двигаться и атаковать
-
-              .program-list-item
-                b
-                  span 11
-                  |  Scriptable Object. PlayerPrefs.
-                |Делаем настройки противников и сохранение прогресса игры
-
-              .program-list-item
-                b
-                  span 12
-                  |  UI. Canvas, элементы UI, работа с RectTransform. UI кнопки.
-                |Делаем UI игры
-
-              .program-list-item
-                b
-                  span 13
-                  |  Анимация в Unity. Стейты анимации. Работа с Animator из кода.
-                |Заставляем персонажей двигаться
-
-              .program-list-item
-                b
-                  span 14
-                  |  Состояние игры. Игровые менеджеры. Static классы, паттерн Singleton.
-                |Делаем экран поражения и рестарта игры
-
-              .program-list-item
-                b
-                  span 15
-                  |  Специфика работы с мобильными платформами.
-                |Touch Input. Виртуальные джойстики. Сборка проекта под Android и iOS
-
-              .program-list-item
-                b
-                  span 16
-                  |  Работа в команде.
-                |Системы контроля версий. Осваиваем Git
-
-              .program-list-item
-                b
-                  span 17
-                  |  Заключение.
-                |Опыт собеседований при приеме на работу
+              p Вы уже работаете в схожей или совершенно другой сфере, но хотите поменять ее на геймдев, тогда 3D - моделирование станет отличным шагом в этом направлении
 
     // Example of work
     section.works
       .container
-        h2 Так выглядят работы наших студентов.
-        h3 Вы тоже так сможете:
+        .row
+          .col-md-6.section-title
+            h2 Так выглядят работы наших студентов
+              img(src=assetsUrl + "gamedev/images/example-img.png").example-img
 
+      .wrap-example
         .example-slider
           .example-item
             img(src=assetsUrl + "unity/images/work-1.jpg")
@@ -388,66 +241,264 @@ block content
           .example-item
             img(src=assetsUrl + "unity/images/work-4.png")
 
+    // How study section
+    section.how-study.transition
+      .container
+        .section-title
+          h2 Как проходит обучение
+
+        .row
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 1
+              h5 Изучаете <br> тему курса
+              p На курсе будут практические видеоуроки
+
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 2
+              h5 Выполняете домашние задания
+              p В удобном для вас темпе
+
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 3
+              h5 Работаете с наставником
+              p Закрепляете знания и работаете над ошибкам
+
+          .col-lg-3.col-md-12
+            .study-item
+              .study-number
+                .number 4
+              h5 Получаете геймдизайн- документацию для портфолио
+              p С которой уже можно начинать карьеру в геймдеве
+
+          .col-md-12
+            .wrap-personal
+              h4 Персональный подход к каждому студенту <br> поможет достичь лучшего результата
+              ul.personal-list
+                li Вы получаете доступ к закрытому чату в «Телеграме» с другими студентами и наставниками,которым всегда можно задать вопрос
+                li Наставники проверяют домашние задания и дают фидбэк
+                li В конце курса вы попадаете в практическую лабораторию — акселератор — с менторами, которые помогут вам объединиться с другими студентами в совместные проекты
+
+          .col-md-12.text-center
+            a(href="#want-study").primary-btn.brand-btn.popup-modal ЗАПИСАТЬСЯ НА КУРС ИЛИ ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
+
+    // Program
+    section.program
+      .container
+        .row.center
+          .col-lg-6
+            .section-title
+              h2 Программа
+              p Вас ждут онлайн-лекции и практические задания на основе реальных кейсов
+
+          .col-lg-6
+            .program-figure
+              img(src=assetsUrl + "3d/images/program-figure.svg")
+
+        .row.align
+          .col-lg-3.col-md-4.col-sm-6
+            .lesson-desc.green
+              p <span>17</span> тематических модулей
+          .col-lg-3.col-md-4.col-sm-6
+            .lesson-desc.green
+              p <span>60</span> онлайн-уроков
+
+          .col-md-12
+            .program-list
+              .program-list-item
+                b
+                  span 1.
+                  |  Введение в Unity, часть 1
+                |Установка, знакомство с интерфейсом и инструментами, установка Visual Studio IDE
+
+              .program-list-item
+                b
+                  span 2.
+                  |  Введение в Unity, часть 2
+                |Гейм объекты, компоненты, камера, UI Canvas
+
+              .program-list-item
+                b
+                  span 3.
+                  |  Введение в программирование
+                |Основы C# — переменные, операторы присваивания, ветвления, циклы. Типы данных, коллекции
+
+              .program-list-item
+                b
+                  span 4.
+                  |  Компоненты MonoBehaviour, event функции Unity, публичные поля
+                |Методы. Создаем свой первый компонент
+
+              .program-list-item
+                b
+                  span 5.
+                  |  Работа с пользовательским вводом
+                |Заставляем персонажа двигаться и учим его стрелять
+
+              .program-list-item
+                b
+                  span 6.
+                  |  Основы физики в Unity. Коллайдеры, rigidbody, настройки физики
+                |Определяем попадания
+
+              .program-list-item
+                b
+                  span 7.
+                  |  Понятие о векторной математике, Quaternions, работа с триггерными функциями
+                |Делаем отскок снарядов от стен
+
+              .program-list-item
+                b
+                  span 8.
+                  |  Изучение компонентной модели, взаимодействие скриптов, объектная модель компонентов.
+                |Создаем компонент «Противник» и наносим по нему урон. Делаем спецэффект попадания
+
+              .program-list-item
+                b
+                  span 9.
+                  |  Работа со звуком. Audio Listener и Audio Source.
+                |Добавляем в игру звук
+
+              .program-list-item
+                b
+                  span 10.
+                  |  AI противников.
+                |Понятие о конечных автоматах и машинах состояний. Заставляем противников двигаться и атаковать
+
+              .program-list-item
+                b
+                  span 11.
+                  |  Scriptable Object. PlayerPrefs.
+                |Делаем настройки противников и сохранение прогресса игры
+
+              .program-list-item
+                b
+                  span 12.
+                  |  UI. Canvas, элементы UI, работа с RectTransform. UI кнопки.
+                |Делаем UI игры
+
+              .program-list-item
+                b
+                  span 13.
+                  |  Анимация в Unity. Стейты анимации. Работа с Animator из кода.
+                |Заставляем персонажей двигаться
+
+              .program-list-item
+                b
+                  span 14.
+                  |  Состояние игры. Игровые менеджеры. Static классы, паттерн Singleton.
+                |Делаем экран поражения и рестарта игры
+
+              .program-list-item
+                b
+                  span 15.
+                  |  Специфика работы с мобильными платформами.
+                |Touch Input. Виртуальные джойстики. Сборка проекта под Android и iOS
+
+              .program-list-item
+                b
+                  span 16.
+                  |  Работа в команде.
+                |Системы контроля версий. Осваиваем Git
+
+              .program-list-item
+                b
+                  span 17.
+                  |  Заключение.
+                |Опыт собеседований при приеме на работу
+
+              .text-center
+                a(href="#").primary-btn.brand-btn смотреть всю программу
+
     // Price of study
     section.price-study
       .container
         .row
-          .col-md-6
+          .col-lg-6
             .cost
               .cost-with-sale
-                |Стоимость <br> обучения <span>−25%<i>при оплате <br> до 1 июня</i></span>
+                |СТОИМОСТЬ <br> ОБУЧЕНИЯ
 
-              .current-price <span>от</span> 2 417 ₽ <span>/ месяц*</span>
+              .current-price <span>от</span> 2 417 <span><b>₽</b> / месяц*</span>
 
               //.current-price 29 000 ₽
               //.past-price 39 000 ₽
 
               .price-part
-                //p Полная цена:
-                //p.one-time-price 29 000 ₽ <span>39 000₽</span>
+                p Полная цена:
+
+                p.one-time-price 29 000 ₽
                 p *Рассрочка без процентов и переплат от банка-партнера Тинькофф
 
-          .col-md-6
+          .col-lg-6
             #price-study.sign-to-course
-              .time-course
-                p Старт курса: <span>30 мая</span>
-                p Осталось: <span>10 мест</span>
-
-              //.title-form Записаться на курс или получить бесплатную консультацию
-              .title-form Получить бесплатную консультацию
+              .title-form получить консультацию и первый модуль бесплатно
               .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
 
-              form(name="getCourse" , method="post" , action=amoServiceUrl)#getCourse.free-consult
+              form(name="getCourse" , method="post" , action=amoServiceUrl)#getCourse.popup-form
                 .form-row
-                  input(type="text" , name="name" , placeholder="Имя и фамилия" , required)
+                  input(type="text" , name="name" , required)
+                  b.placeholder Имя
                   label.error-label Некорректные данные
+
                 .form-row
-                  input(type="phone" , name="phone" , placeholder="Телефон" , required)
+                  input(type="email" , name="email" , required)
+                  b.placeholder Email
                   label.error-label Некорректные данные
+
                 .form-row
-                  input(type="email" , name="email" , placeholder="Email" , required)
+                  input(type="phone" , name="phone" , required)
+                  b.placeholder Телефон
                   label.error-label Некорректные данные
 
                 input(name="course" type="hidden" value="740185")
-                input(name="page" type="hidden" value="Разработка игр на Unity для начинающих")
+                input(name="page" type="hidden" value="ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ И ПЕРВЫЙ МОДУЛЬ БЕСПЛАТНО")
                 input(name="source" type="hidden" value="741895")
+                input(type="hidden" , name="email" , value="empty@mail.com")
 
-                .form-row: button(type="submit") Записаться
+                .form-row: button(type="submit").primary-btn.brand-btn ОТПРАВИТЬ ЗАЯВКУ
               //.free-consult
                 <script id="amoforms_script_769354" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1618840462"></script>
                 <script>!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"769354",hash:"206fd15000bf386dbb812f16193b2c3a",locale:"ru"})}(window,0,"amo_forms_","params","load");</script>
 
-              p.personal-data Нажимая на кнопку, я соглашаюсь на <a href="https://www.extralevel.ru/landing/privacy_policy.pdf" , target="_blank">обработку персональных данных.</a>
+              p.personal-data Нажимая на кнопку, я соглашаюсь на <a href="/privacy_policy.pdf" , target="_blank">обработку персональных данных</a>.
+
+    // Work in company
+    section.work-in-company
+      .container
+        .section-title
+          h2 Вы сможете работать в этих компаниях
+
+        .company-logo
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-1.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-2.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-3.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-4.png")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-5.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-6.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-7.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-8.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-9.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-10.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-11.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-12.svg")
+          .item-logo: img(src=assetsUrl + "unity/images/company/logo-13.svg")
 
     // Faq
     section.faq
       .container
-        .row.bottom
-          .col-md-8
-            h2 Часто задаваемые вопросы
+        .row.center
+          .col-md-6
+            .section-title
+              h2 Часто задаваемые вопросы
 
-          .col-md-4
-            img(src=assetsUrl + "unity/images/faq-img.png").faq-img
+          .col-md-6.text-end
+            img(src=assetsUrl + "3d/images/faq-img.png").faq-img
 
         .faq-wrap
           .faq-item
@@ -474,10 +525,47 @@ block content
             .faq-title У меня нет опыта в программировании. Я могу пройти курс?
             p Этот курс сможет пройти каждый, кто действительно в этом заинтересован. На нем вы получите все необходимые основы программирования для работы в игровой индустрии.
 
+  // Choice
+  section.choice
+    .container
+      .section-title
+        h2 Выберите свою будущую профессию!
+
+      .wrap-report
+        .row
+          .col-lg-6.col-12
+            .img-report
+              img(src=assetsUrl + "unity/images/img-report.png")
+
+          .col-lg-6
+            #get-report.sign-to-course
+              .title-form Получить отчет о самых востребованных профессиях геймдева - <span>бесплатно!</span>
+              .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
+
+              form(name="getProfession" , method="post" , action=amoServiceUrl)#getReport.popup-form
+                .form-row
+                  input(type="text" , name="name" , required)
+                  b.placeholder Имя
+                  label.error-label Некорректные данные
+
+                .form-row
+                  input(type="phone" , name="phone" , required)
+                  b.placeholder Телефон
+                  label.error-label Некорректные данные
+
+                input(name="course" type="hidden" value="740185")
+                input(name="page" type="hidden" value="Получить отчет о самых востребованных профессиях геймдева - бесплатно!")
+                input(name="source" type="hidden" value="741895")
+
+                .form-row: button(type="submit").primary-btn.brand-btn ОТПРАВИТЬ
+
+              p.personal-data Нажимая на кнопку, я соглашаюсь на <a href="/privacy_policy.pdf" , target="_blank">обработку персональных данных</a>.
+
 
   // Footer start
-  include ../elements/_footer
+  include ../elements/_footer_v2
 
 block append scripts
   // Main script
   script(src=assetsUrl + "unity/js/main.js")
+  script(src=assetsUrl + "unity/v2/js/additional.js")
