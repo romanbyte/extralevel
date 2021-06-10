@@ -272,12 +272,12 @@ header {
     }
 }
 
-.gift-img {
+p.gift-img {
   margin: 10px 0 0 -10px;
 }
 
 .additional-info {
-  margin: 25px 0;
+  margin: 0 0 25px 0;
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -2072,6 +2072,19 @@ p.margin-bottom {
   .intro .col-md-12 {
     position: relative;
     z-index: 1;
+  }
+
+  .white-popup-block.choice .section-title {
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+  .example-slider {
+    width: auto;
+  }
+
+  .example-item img {
+    height: 190px;
   }
 
 }

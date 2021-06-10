@@ -52,11 +52,11 @@ block content
           .col-md-6
             .intro-description
               //h1 Онлайн-курс <br> по разработке <br> игр на Unity <br> для начинающих
-              h1 Онлайн-курс  по <span>разработке игр на Unity</span>
+              h1 Онлайн-курс по <span>разработке игр на Unity</span>
               h4 для начинающих
               p.margin-bottom Вы освоите язык программирования C#, научитесь создавать мобильные игры на популярном игровом движке  Unity, создадите свой первый проект для портфолио и обретете востребованную в геймдеве профессию
               a(href="#price-study").primary-btn.brand-btn.scroll-down ЗАПИСАТЬСЯ НА КУРС
-              p.gift-img: img(src=assetsUrl + "unity/images/gift.png")
+              p.gift-img: a(href="#price-study").scroll-down: img(src=assetsUrl + "unity/images/gift.png")
 
           .col-md-6
             ul.additional-info.intro-info.d-md-none.d-inline-block
@@ -95,13 +95,13 @@ block content
             .way-item
               .way-img
                 img(src=assetsUrl + "3d/images/way-1.png")
-              p Работать с редактором, располагать и перемещать объекты, работать со сценами и префабами
+              p Работать с редактором, располагать и перемещать объекты, работать со сценами и префабами
 
           .col-md-4
             .way-item
               .way-img
                 img(src=assetsUrl + "3d/images/way-2.png")
-              p Создавать игровую логику с помощью компонентов MonoBehaviour.
+              p Создавать игровую логику с помощью компонентов MonoBehaviour.
 
           .col-md-4
             .way-item
@@ -125,13 +125,13 @@ block content
             .way-item
               .way-img
                 img(src=assetsUrl + "3d/images/way-6.png")
-              p Собирать и публиковать игры на мобильных платформах iOS и Android
+              p Собирать и публиковать игры на мобильных платформах iOS и Android
 
         .wrap-video
-          a(href="https://www.youtube.com/watch?v=Cn7d1aTecqY").popup-youtube.d-block
+          a(href="https://www.youtube.com/watch?v=yDWsu7IyDNc").popup-youtube.d-block
             img(src=assetsUrl + "unity/images/video.png")
 
-            a(href="https://www.youtube.com/watch?v=Cn7d1aTecqY").video-play.popup-youtube
+            a(href="https://www.youtube.com/watch?v=yDWsu7IyDNc").video-play.popup-youtube
               img(src=assetsUrl + "3d/images/video-btn.png")
 
     // Progress
@@ -437,7 +437,7 @@ block content
 
           .col-lg-6
             #price-study.sign-to-course
-              .title-form получить консультацию  и первый модуль бесплатно
+              .title-form получить консультацию и первый модуль бесплатно
               .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
 
               form(name="getCourse" , method="post" , action=amoServiceUrl)#getCourse.popup-form
@@ -456,8 +456,8 @@ block content
                   b.placeholder Телефон
                   label.error-label Некорректные данные
 
-                input(name="course" type="hidden" value="769413")
-                input(name="page" type="hidden" value="3D моделирование с нуля")
+                input(name="course" type="hidden" value="740185")
+                input(name="page" type="hidden" value="ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ И ПЕРВЫЙ МОДУЛЬ БЕСПЛАТНО")
                 input(name="source" type="hidden" value="741895")
 
                 .form-row: button(type="submit").primary-btn.brand-btn ОТПРАВИТЬ ЗАЯВКУ
@@ -553,7 +553,7 @@ block content
                   label.error-label Некорректные данные
 
                 input(name="course" type="hidden" value="740185")
-                input(name="page" type="hidden" value="Разработка игр на Unity для начинающих")
+                input(name="page" type="hidden" value="Получить отчет о самых востребованных профессиях геймдева - бесплатно!")
                 input(name="source" type="hidden" value="741895")
 
                 .form-row: button(type="submit").primary-btn.brand-btn ОТПРАВИТЬ
