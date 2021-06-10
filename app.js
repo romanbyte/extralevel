@@ -1,71 +1,42 @@
 const express = require("express");
 const app = express();
-const cookieParser = require("cookie-parser");
 const fs = require("fs");
 
 const PORT = process.env.PORT || 3000;
-const COOKIE_TIME = 1000 * 60 * 60 * 24 * 365; // 1 year
 
-const getPagesWithVersion = () => {
-  return fs
-    .readdirSync("./public")
-    .filter(
-      (el) => fs.lstatSync(`./public/${el}`).isDirectory() && el !== "common"
-    )
-    .filter(
-      (dir) =>
-        fs.readdirSync(`./public/${dir}`).filter((el) => /v\d/.test(el)).length
-    )
-    .map((dir) => ({
-      name: dir,
-      versionsAmount: fs
-        .readdirSync(`./public/${dir}`)
-        .filter((el) => /v\d/.test(el)).length,
-      currentVersion: 1,
-    }));
-};
+const VERSION = {
+  unity : process.env.V_UNITY || 1,
+  '3d' : process.env.V_3D || 1,
+  gamedev : process.env.V_GAMEDEV || 1,
+  art : process.env.V_ART || 1,
+  ios : process.env.V_IOS || 1,
+  android : process.env.V_ANDROID || 1,
+}
+
+const getPagesWithVersion = () => fs
+  .readdirSync("./public").reduce((pages, el) => {
+    if (el !== "common" && fs.lstatSync(`./public/${el}`).isDirectory()) {
+      const versions = fs.readdirSync(`./public/${el}`).filter((el) => /v\d/.test(el)).length
+      if(versions){
+        pages.push({
+          name: el,
+          versionsAmount: versions,
+          currentVersion: 1,
+        })
+      }
+    }
+    return pages
+  }, []);
 
 let ROUTES = getPagesWithVersion();
 console.log("Routes with versions: ", ROUTES);
 
-const getRouteIdx = (routeName) =>
-  ROUTES.findIndex((route) => route.name === routeName);
-
-const nextVersion = (routeName) => {
-  const routeIdx = getRouteIdx(routeName);
-
-  if (ROUTES[routeIdx].currentVersion < ROUTES[routeIdx].versionsAmount) {
-    ROUTES[routeIdx].currentVersion++;
-  } else ROUTES[routeIdx].currentVersion = 1;
-};
-
 const getPageByVersion = (routeName, version) =>
   `${__dirname}/public/${routeName}/v${version}/index.html`;
 
-const getPage = (routeName) => {
-  let page = getPageByVersion(
-    routeName,
-    ROUTES[getRouteIdx(routeName)].currentVersion
-  );
-  nextVersion(routeName);
-  return page;
-};
-
-app.use(cookieParser());
-
 ROUTES.forEach((route) => {
   app.get(`/${route.name}`, (req, res) => {
-    const userVersion = req.cookies[route.name];
-
-    if (userVersion) {
-      res.sendFile(getPageByVersion(route.name, parseInt(userVersion)));
-    } else {
-      res.cookie(route.name, ROUTES[getRouteIdx(route.name)].currentVersion, {
-        expires: new Date(Date.now() + COOKIE_TIME),
-        maxAge: COOKIE_TIME,
-      });
-      res.sendFile(getPage(route.name));
-    }
+    res.sendFile(getPageByVersion(route.name, VERSION[route.name]));
   });
 });
 
