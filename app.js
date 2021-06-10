@@ -6,37 +6,33 @@ const fs = require("fs");
 const PORT = process.env.PORT || 3000;
 const COOKIE_TIME = 1000 * 60 * 60 * 24 * 365; // 1 year
 
-const getPagesWithVersion = () => {
-  return fs
-    .readdirSync("./public")
-    .filter(
-      (el) => fs.lstatSync(`./public/${el}`).isDirectory() && el !== "common"
-    )
-    .filter(
-      (dir) =>
-        fs.readdirSync(`./public/${dir}`).filter((el) => /v\d/.test(el)).length
-    )
-    .map((dir) => ({
-      name: dir,
-      versionsAmount: fs
-        .readdirSync(`./public/${dir}`)
-        .filter((el) => /v\d/.test(el)).length,
-      currentVersion: 1,
-    }));
-};
+const getPagesWithVersion = () => fs
+  .readdirSync("./public").reduce((pages, el) => {
+    if (el !== "common" && fs.lstatSync(`./public/${el}`).isDirectory()) {
+      const versions = fs.readdirSync(`./public/${el}`).filter((el) => /v\d/.test(el)).length
+      if(versions){
+        pages.push({
+          name: el,
+          versionsAmount: versions,
+          currentVersion: 1,
+        })
+      }
+    }
+    return pages
+  }, []);
 
 let ROUTES = getPagesWithVersion();
 console.log("Routes with versions: ", ROUTES);
 
-const getRouteIdx = (routeName) =>
-  ROUTES.findIndex((route) => route.name === routeName);
+const getRoute = (routeName) =>
+  ROUTES.find((route) => route.name === routeName);
 
 const nextVersion = (routeName) => {
-  const routeIdx = getRouteIdx(routeName);
+  const route = getRoute(routeName);
 
-  if (ROUTES[routeIdx].currentVersion < ROUTES[routeIdx].versionsAmount) {
-    ROUTES[routeIdx].currentVersion++;
-  } else ROUTES[routeIdx].currentVersion = 1;
+  if (route.currentVersion < route.versionsAmount) {
+    route.currentVersion++;
+  } else route.currentVersion = 1;
 };
 
 const getPageByVersion = (routeName, version) =>
@@ -45,7 +41,7 @@ const getPageByVersion = (routeName, version) =>
 const getPage = (routeName) => {
   let page = getPageByVersion(
     routeName,
-    ROUTES[getRouteIdx(routeName)].currentVersion
+    getRoute(routeName).currentVersion
   );
   nextVersion(routeName);
   return page;
@@ -60,7 +56,7 @@ ROUTES.forEach((route) => {
     if (userVersion) {
       res.sendFile(getPageByVersion(route.name, parseInt(userVersion)));
     } else {
-      res.cookie(route.name, ROUTES[getRouteIdx(route.name)].currentVersion, {
+      res.cookie(route.name, getRoute(route.name).currentVersion, {
         expires: new Date(Date.now() + COOKIE_TIME),
         maxAge: COOKIE_TIME,
       });
