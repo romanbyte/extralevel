@@ -128,7 +128,7 @@ header {
     }
   }
 
-  .toggle-nav {
+  .toggle-nav , .side-btn {
     width: 44px;
     height: 25px;
     border: none;
@@ -164,8 +164,75 @@ header {
       }
   }
 
+  .side-btn {
+    display: flex;
+    margin-left: 0;
+  }
+
+  .side-nav {
+    max-width: 320px;
+    position: fixed;
+    right: -110%;
+    background: #fff;
+    height: 100%;
+    top: 0;
+    z-index: 3;
+    padding: 40px 30px;
+    transition: all .3s ease;
+      ul {
+        margin: 0;
+        padding: 20px 0 0 0;
+          a {
+            text-decoration: none;
+            color: $default-text-color;
+          }
+      }
+      &:after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 110%;
+        width: calc(100% - 320px);
+        height: 100%;
+        background: rgba(0, 0, 0, .7);
+        transition: all .3s ease;
+      }
+
+      &.open {
+        right: 0;
+          &:after {
+            left: 0;
+          }
+      }
+
+    .close-nav {
+      width: 25px;
+      height: 25px;
+      background: transparent;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      span {
+        width: 100%;
+        height: 3px;
+        background: #000;
+        display: block;
+          &:nth-child(1) {
+            transform: rotate(45deg) translate(0px , -1px);
+          }
+          &:nth-child(2) {
+            transform: rotate(-45deg) translate(3px, -2px);
+          }
+      }
+    }
+  }
+
   .header-contact {
     text-align: right;
+      &.wrap-btn {
+        display: flex;
+        justify-content: flex-end;
+      }
   }
 
     .header-phone {
@@ -1476,6 +1543,20 @@ button.mfp-close {
 
 @media screen and (max-width: 992px) {
 
+  header {
+    .container {
+      position: relative;
+    }
+    .side-btn {
+      position: absolute;
+      top: 0;
+      right: 15px;
+    }
+    .header-phone {
+      display: none;
+    }
+  }
+
   .hero-img {
     img {
       &.desktop-img {
@@ -2181,7 +2262,7 @@ p.margin-bottom {
   }
 
   .example-item img {
-    height: 190px;
+    height: 150px;
   }
 
 }

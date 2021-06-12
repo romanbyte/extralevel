@@ -5,6 +5,14 @@
     $(this).toggleClass('open');
   });
 
+  $('.side-btn').on('click' , function() {
+    $('.side-nav').addClass('open');
+  });
+
+  $('.side-nav .close-nav').on('click' , function() {
+    $('.side-nav').removeClass('open');
+  });
+
   // Parallax effect for inner intro section
   //var top_position = $('#price-study').offset().top;
   //var top_position_1 = $('#what-learn-row').offset().top;
@@ -68,8 +76,9 @@
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true
         }
       }
     ]

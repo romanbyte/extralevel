@@ -2,7 +2,7 @@
 
 block vars
   - var GTM = "GTM-KTQN9JG"
-  - var title ="Онлайн-курс по разработке игр на Unity для начинающих - ExtraLevel"
+  - var title ="Онлайн-курс разработка игр на Unity для начинающих - ExtraLevel"
 
 block append styles
   link(rel='stylesheet' , href=assetsUrl + "unity/css/style_v2.css")
@@ -29,7 +29,7 @@ block content
             .logo
               a(href="https://www.extralevel.ru/"): img(src=assetsUrl + "unity/images/logo.svg")
 
-          .col-lg-4.col-md-9.col-6
+          .col-lg-4.col-md-9.col-6.d-none.d-lg-block
             nav.navbar.navbar-expand-lg.navbar-light
               button.navbar-toggler.toggle-nav(type="button" , data-bs-toggle="collapse" , data-bs-target="#navbarSupportedContent" , aria-controls="navbarSupportedContent" , aria-expanded="false" , aria-label="Toggle navigation")
                 span
@@ -40,14 +40,27 @@ block content
                   li: a(href="https://www.extralevel.ru/" , target="_blank") Курсы
 
                 .header-contact.d-lg-none.d-flex
-                  a(href="#want-study").primary-btn.popup-modal Начать учиться
+                  //a(href="#want-study").primary-btn.popup-modal Начать учиться
                   a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
 
 
           .col-md-5
-            .header-contact
+            .header-contact.wrap-btn
               a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
-              a(href="#want-study").primary-btn.popup-modal Начать учиться
+              //a(href="#want-study").primary-btn.popup-modal Начать учиться
+              button.side-btn
+                span
+                span
+                span
+
+            .side-nav
+              button.close-nav
+                span
+                span
+              ul
+                li: a(href="#") Разработка игр на Unity для начинающих
+                li: a(href="#") 3D моделирование с нуля
+
 
     // Intro
     section.intro
@@ -57,7 +70,7 @@ block content
           .col-md-6
             .intro-description
               //h1 Онлайн-курс <br> по разработке <br> игр на Unity <br> для начинающих
-              h1 Онлайн-курс по <span>разработке игр на Unity</span>
+              h1 Онлайн-курс <span>разработка игр на Unity</span>
               h4 для начинающих
               p.margin-bottom Вы освоите язык программирования C#, научитесь создавать мобильные игры на популярном игровом движке  Unity, создадите свой первый проект для портфолио и обретете востребованную в геймдеве профессию
               a(href="#price-study").primary-btn.brand-btn.scroll-down ЗАПИСАТЬСЯ НА КУРС
@@ -544,7 +557,7 @@ block content
 
           .col-lg-6
             #get-report.sign-to-course
-              .title-form Получить отчет о самых востребованных профессиях геймдева - <span>бесплатно!</span>
+              .title-form Получить обзор о самых востребованных профессиях геймдева - <span>бесплатно!</span>
               .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
 
               form(name="getProfession" , method="post" , action=amoServiceUrl)#getReport.popup-form
