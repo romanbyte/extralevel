@@ -182,9 +182,19 @@ header {
       ul {
         margin: 0;
         padding: 20px 0 0 0;
+        font-size: 18px;
+        li:first-child {
+          display: none;
+        }
           a {
             text-decoration: none;
             color: $default-text-color;
+          }
+          li {
+            span {
+              font-weight: 700;
+              color: $green-color;
+            }
           }
       }
       &:after {
@@ -196,6 +206,7 @@ header {
         height: 100%;
         background: rgba(0, 0, 0, .7);
         transition: all .3s ease;
+        pointer-events: none;
       }
 
       &.open {
@@ -1554,6 +1565,14 @@ button.mfp-close {
     }
     .header-phone {
       display: none;
+    }
+  }
+
+  .side-nav {
+    ul {
+      li:first-child {
+        display: block;
+      }
     }
   }
 
