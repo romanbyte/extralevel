@@ -1,13 +1,13 @@
 $(function () {
 
-  setTimeout(function(){
+  /*setTimeout(function(){
     $.magnificPopup.open({
       items: {
         src: '#choice-popup' //ID OF INLINE ELEMENT
       },
         type:'inline'
       });
-  }, 20000);
+  }, 20000);*/
 
   // Program list
   $('.program-list .program-list-item').slice(7).hide();
