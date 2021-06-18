@@ -1,0 +1,219 @@
+extends common/layout/_layout.pug
+
+block vars
+  - var GTM = "GTM-N3KXQNP"
+  - var title ="Онлайн-школа ExtraLevel"
+
+block append styles
+  link(rel='stylesheet' , href=assetsUrl + "gamedev/css/style.css")
+
+block content
+  // Main page start
+  main
+
+    // Header
+    header
+      .container
+        .row.center
+          .col-md-3.col-6
+            .logo
+              a(href="https://www.extralevel.ru/"): img(src=assetsUrl + "gamedev/images/logo.svg")
+
+          .col-lg-4.col-md-9.col-6
+            nav.navbar.navbar-expand-lg.navbar-light
+              button.navbar-toggler.toggle-nav(type="button" , data-bs-toggle="collapse" , data-bs-target="#navbarSupportedContent" , aria-controls="navbarSupportedContent" , aria-expanded="false" , aria-label="Toggle navigation")
+                span
+                span
+                span
+              div#navbarSupportedContent.collapse.navbar-collapse
+                ul
+                  li: a(href="https://www.extralevel.ru/" , target="_blank") Курсы
+                  li: a(href="about-us.html") О школе
+
+                .header-contact.d-lg-none.d-flex
+                  a(href="#want-study").primary-btn.popup-modal Хочу учиться
+                  a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
+
+
+          .col-md-5
+            .header-contact
+              a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
+              a(href="#want-study").primary-btn.popup-modal Хочу учиться
+
+    // Intro
+    section.intro.about-intro
+      .container.position-relative
+
+        .row
+          .col-md-9
+            .intro-description
+              h1 <span>EXTRALEVEL — ЭТО ОНЛАЙН-ШКОЛА</span>  С УПОРОМ НА GAMEDEV И IT СПЕЦИАЛЬНОСТИ.
+
+          .col-md-3
+            .about-intro-img
+              img(src=assetsUrl + "gamedev/images/about-intro-img.png")
+
+    // Teachers
+    section.teachers.about-school
+      .container.position-relative
+        .section-title
+          p <span>Мы гордимся нашими преподавателями.</span> Быть нашим студентом — значит учиться у настоящих профессионалов из признанных и уважаемых в gamedev и IT компаний.
+          .teachers-img
+            img(src=assetsUrl + "gamedev/images/teachers-img-full.png")
+            //img(src=assetsUrl + "gamedev/images/teachers-figure.png").teachers-figure
+
+        .row
+          .col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-1.jpg")
+              h5 Алексей Лукьянов
+              p.teacher-position Lead Developer в Azur Games (Robot Warfare)
+              p Написал собственный 3D-движок, принимал участие в разработке SDK и фреймворков для Unity. Опыт в программировании — 25 лет
+
+          .col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-2.jpg")
+              h5 Игорь Клюкин
+              p.teacher-position ex Chief Operating Officer в Pixonic (War Robots)
+              p Работал геймдизайнером, руководителем проекта, возглавлял отдел аналитики и в 2014 году стал исполнительным директором компании Pixonic
+
+          .col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-3.jpg")
+              h5 Леонид Маковский
+              p.teacher-position eLearning Developer в Extra Level
+              p Евангелист дистанционного обучения. Знает, как сделать его увлекательным и продуктивным
+
+          .col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-4.png")
+              h5 Антон Кругляков
+              p.teacher-position Enterprise Developer Relations Manager в компании Unity
+              p Расскажет о практиках ведущих разработчиков в индустрии, чтобы вы могли освоить актуальные навыки
+
+          .col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-5.jpg")
+              h5 Петр Вечкасов
+              p.teacher-position Lead Artist в Crazy Panda
+              p Занимается компьютерной графикой более 15 лет
+
+          //.col-md-4.col-8
+            .teacher-item.animated
+              .teacher-img
+                img(src=assetsUrl + "gamedev/images/teacher-3.jpg")
+              h5 Леонид Маковский
+              p.teacher-position eLearning Developer в Extra Level
+              p Евангелист дистанционного обучения. Знает, как сделать его увлекательным и продуктивным
+
+    // Find way
+    section.find-way.about-school.bg-light-blue
+      .container
+        .section-title
+          p <span>Нам действительно важно, чтобы каждый, кто выбирает ExtraLevel</span> для получения новой специальности, нашел то, что ему действительно нужно.
+          .way-title Запросы наших студентов разнообразны. Они:
+
+        .row
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "gamedev/images/important-1.png")
+              .way-title только начинают карьеру <span>в gamedev или IT</span>
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "gamedev/images/important-2.png")
+              .way-title добились успехов в своей отрасли, <span>но хотят сменить профессию на более перспективную и интересную</span>
+
+          .col-md-4
+            .way-item
+              .way-img
+                img(src=assetsUrl + "gamedev/images/important-3.png")
+              .way-title уже профессионалы в gamedev или IT, <span>но никогда не стоят на месте и регулярно прокачивают свои навыки</span>
+
+          .col-md-10.mt-5
+            .way-title: span Под каждую из ваших потребностей наши опытные менеджеры помогут подобрать курс, который окажется для вас максимально эффективным.
+
+    // How study section
+    section.how-study.about-school.study-school
+      .container
+        .row
+          .col-md-8
+            .section-title
+              p <span>Наша цель - ваш будущий успех,</span> отправной точкой которого станет ExtraLevel.
+              .way-title Запросы наших студентов разнообразны. Они:
+
+          .col-md-4.text-end
+            img(src=assetsUrl + "gamedev/images/important-img.png")
+
+        .row
+          .col-lg-4.col-md-12
+            .study-item
+              .study-number
+                .number 1
+              p сильная образовательная база (теоретическая и практическая), позволяющая нашим студентам эффективно осваивать востребованные профессии
+
+          .col-lg-4.col-md-12
+            .study-item
+              .study-number
+                .number 2
+              p все наши авторы и спикеры - настоящие профи: они точно знают, чем живет и в каких специалистах нуждается индустрия
+
+          .col-lg-4.col-md-12
+            .study-item
+              .study-number
+                .number 3
+              p помогать талантливым студентам в дальнейшем развитии их проектов
+
+  // Choice
+  section.choice
+    .container
+
+      .wrap-report
+        .row
+          .col-lg-6.col-12
+            .img-report
+              img(src=assetsUrl + "gamedev/images/img-report.png")
+
+          .col-lg-6
+            #get-report.sign-to-course
+              .title-form ОСТАЛИСЬ ВОПРОСЫ? <span>Мы готовы ответить на любые из них.</span>
+              .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
+
+              form(name="getProfession" , method="post" , action=amoServiceUrl)#getReport.popup-form
+                .form-row
+                  input(type="text" , name="name" , required)
+                  b.placeholder Имя
+                  label.error-label Некорректные данные
+
+                .form-row
+                  input(type="email" , name="email" , required)
+                  b.placeholder E-mail
+                  label.error-label Некорректные данные
+
+                .form-row
+                  input(type="phone" , name="phone" , required)
+                  b.placeholder Телефон
+                  label.error-label Некорректные данные
+
+                input(name="course" type="hidden" value="740185")
+                input(name="page" type="hidden" value="Остались вопросы? Мы готовы ответить на любые из них.")
+                input(name="source" type="hidden" value="741895")
+
+                .form-row: button(type="submit").primary-btn.brand-btn.w-100 ОТПРАВИТЬ
+
+              p.personal-data Нажимая на кнопку, я соглашаюсь на <a href="/privacy_policy.pdf" , target="_blank">обработку персональных данных</a>.
+
+
+  // Footer start
+  include gamedev/elements/_footer.pug
+
+block append scripts
+  // Main script
+  script(src=`${assetsUrl}gamedev/js/main.js`)

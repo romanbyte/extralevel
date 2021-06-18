@@ -211,6 +211,21 @@ header {
 			margin-top: 60px;
 		}
 
+		&.about-intro {
+			padding: 80px 0 140px 0;
+			background: #0B2340;
+				.intro-description {
+					padding-right: 30px;
+				}
+
+				.about-intro-img {
+					img {
+						position: absolute;
+						right: 0;
+					}
+				}
+		}
+
 }
 
 .brand-btn {
@@ -353,6 +368,9 @@ header {
 			font-size: 24px;
 			line-height: 34px;
 			margin-bottom: 20px;
+				span {
+					font-weight: 400;
+				}
 		}
 
 h4 {
@@ -437,6 +455,26 @@ h5 {
 	    max-width: 130px;
 	    transition: all .3s ease;
 		}
+}
+
+.about-school {
+	.section-title {
+		margin-top: 40px;
+		margin-bottom: 80px;
+		max-width: 930px;
+			p {
+				font-size: 32px;
+				line-height: 44px;
+					span {
+						font-weight: 700;
+						color: $blue-color;
+					}
+			}
+	}
+}
+
+.bg-light-blue {
+	background: #F0F9FF;
 }
 
 	.teacher-item {
@@ -565,8 +603,14 @@ h5 {
 			display: none;
 		}
 
+		.col-lg-4 {
+			.study-number:after {
+				display: none;
+			}
+		}
+
 		&.transition {
-			.col-lg-3 {
+			.col-lg-3 , .col-md-12 {
 				&:nth-child(1) {
 					.number {
 						animation: fadeIn .8s 1 normal forwards;
@@ -589,6 +633,21 @@ h5 {
 				}
 			}
 		}
+
+	&.study-school {
+		background: #0B2340;
+			.section-title {
+				color: #fff;
+					span {
+						color: #fff;
+					}
+			}
+			.study-item {
+				font-size: 24px;
+				line-height: 33px;
+				color: #fff;
+			}
+	}
 
 }
 
@@ -637,6 +696,50 @@ h5 {
     transform: scale(1);
   }
 }
+
+// Choice
+.choice {
+  padding: 70px 0;
+  background: #0E34BD;
+    .section-title {
+      max-width: 470px;
+        h2 {
+          color: #fff;
+        }
+    }
+    .title-form {
+    	padding-top: 60px;
+    	font-weight: 700;
+    	font-size: 26px;
+    	color: $blue-color;
+      span {
+      	font-weight: 400;
+        font-size: 24px;
+        display: block;
+      }
+    }
+
+    .popup-form + .personal-data {
+	    text-align: center;
+	    font-size: 12px;
+	    line-height: 17px;
+	    color: #A4A6AD;
+	  }
+}
+
+  .wrap-report {
+    background: #fff;
+    border-radius: 6px;
+    padding-bottom: 40px;
+  }
+
+    .img-report {
+      height: 100%;
+        img {
+          position: relative;
+          top: 10%;
+        }
+    }
 
 // Price of study
 .price-study {
