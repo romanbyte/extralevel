@@ -28,7 +28,7 @@ block content
               div#navbarSupportedContent.collapse.navbar-collapse
                 ul
                   li: a(href="https://www.extralevel.ru/" , target="_blank") Курсы
-                  li: a(href="about-us.html") О школе
+                  li: a(href="about-us.html").active О школе
 
                 .header-contact.d-lg-none.d-flex
                   a(href="#want-study").primary-btn.popup-modal Хочу учиться
@@ -171,6 +171,44 @@ block content
                 .number 3
               p помогать талантливым студентам в дальнейшем развитии их проектов
 
+  // We understand
+  section.we-understand.about-school
+    .container
+
+      .section-title
+        p <span>Мы понимаем, для успешной работы</span> после окончания обучения вам нужно не только получить качественное образование, но и овладеть важнейшими навыками.
+
+      .not-drop
+        img(src=assetsUrl + "gamedev/images/not-drop.png")
+        .not-drop-text
+          p Своих не бросаем:
+          p с нами вы научитесь работать в команде и создавать качественное, грамотно презентующее вас портфолио. Совместно с другими студентами, под присмотром опытных наставников, вы создадите сильные проекты для портфолио. Лучшие из этих проектов могут попасть в наш акселератор для продвижения и поиска первых издателей!
+
+      .section-title
+        p <span>А еще мы знаем, как важно получать фидбэк.</span> <br> Поэтому проверять ваши домашние задания будут опытные кураторы, готовые дать обратную связь и уточнить все непонятные моменты.
+
+  // Plan
+  section.plan.about-school
+    .container
+      .row.center
+        .col-md-7
+          .section-title
+            p <span>Планы на ближайшее будущее:</span><br> В 2021 году мы планируем запустить курсы по нескольким направлениям:
+
+        .col-md-5.text-end
+          img(src=assetsUrl + "gamedev/images/plan-img.png")
+
+      ul.plan-list
+        li игровой движок UE4
+        li 2D/3D графика и анимация
+        li геймдизайн
+        li VFX
+        li VR и AR разработка
+        li аналитика в GameDev и IT
+        li тестирование и киберспорт
+        li разработка мобильных приложений на платформах iOS и Android
+
+
   // Choice
   section.choice
     .container
@@ -186,7 +224,7 @@ block content
               .title-form ОСТАЛИСЬ ВОПРОСЫ? <span>Мы готовы ответить на любые из них.</span>
               .success <span>Спасибо за заявку!</span> Менеджер скоро с вами свяжется
 
-              form(name="getProfession" , method="post" , action=amoServiceUrl)#getReport.popup-form
+              form(name="getQuestion" , method="post" , action=amoServiceUrl)#getReport.popup-form
                 .form-row
                   input(type="text" , name="name" , required)
                   b.placeholder Имя
@@ -210,6 +248,13 @@ block content
 
               p.personal-data Нажимая на кнопку, я соглашаюсь на <a href="/privacy_policy.pdf" , target="_blank">обработку персональных данных</a>.
 
+
+  // Bottom nav
+  section.bottom-nav
+    .container
+      ul.bottom-nav-link
+        li: a(href="#") О школе
+        li: a(href="#") Курсы
 
   // Footer start
   include gamedev/elements/_footer.pug

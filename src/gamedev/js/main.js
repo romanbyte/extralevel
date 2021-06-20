@@ -236,6 +236,7 @@
   });
 
   var $getCorseForm = $('form[name="getCourse"]');
+  var $getQuestionForm = $('form[name="getQuestion"]');
 
   if ($getCorseForm.length) {
     $getCorseForm.each(function () {
@@ -260,6 +261,38 @@
           $getCorseForm.find('input').removeClass('active');
           $getCorseForm.hide();
           $getCorseForm.next('p').hide();
+          // TODO по событию success вывести сообщение об успешной отправки формы
+        }).fail(function() {
+          console.log('fail');
+          // TODO по событию fail вывести сообщение об ошибке
+        });
+      });
+    })
+  }
+
+  if ($getQuestionForm.length) {
+    $getQuestionForm.each(function () {
+      var $this = $(this);
+
+      $this.submit(function(e) {
+
+        $this.find('button[type="submit"]').attr('disabled' , 'disabled');
+
+        e.preventDefault();
+
+        $.ajax({
+          contentType: "application/json",
+          type: $this.attr('method'),
+          url: $this.attr('action'),
+          data: createAMOJSON($this)
+        }).done(function() {
+          console.log('success');
+          $('.success').show();
+          $getQuestionForm.trigger('reset');
+          $getQuestionForm.find('button[type="submit"]').removeAttr('disabled');
+          $getQuestionForm.find('input').removeClass('active');
+          $getQuestionForm.hide();
+          $getQuestionForm.next('p').hide();
           // TODO по событию success вывести сообщение об успешной отправки формы
         }).fail(function() {
           console.log('fail');
