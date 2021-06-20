@@ -35,9 +35,24 @@ block content
 
 
           .col-md-5
-            .header-contact
+            .header-contact.wrap-btn
               a(href="tel: +74959662866").header-phone +7 (495) 966-28-66
-              a(href="#want-study").primary-btn.popup-modal Хочу учиться
+              //a(href="#want-study").primary-btn.popup-modal Хочу учиться
+
+              button.side-btn
+                span
+                span
+                span
+
+            .side-nav
+              button.close-nav
+                span
+                span
+              ul
+                li: span +7 (495) 966-28-66
+                li: a(href="/unity") Разработка игр на Unity для начинающих
+                li: a(href="/3d") 3D моделирование с нуля
+                li: a(href="/about-us.html") О школе
 
     // Intro
     section.intro
@@ -342,6 +357,12 @@ block content
                   label Нажимая на кнопку, я соглашаюсь на <a href="https://www.extralevel.ru/landing/privacy_policy.pdf" , target="_blank">обработку персональных данных.</a>
                 .form-row: button(type="submit") Записаться
 
+  // Bottom nav
+  section.bottom-nav
+    .container
+      ul.bottom-nav-link
+        li: a(href="about-us.html") О школе
+        li: a(href="/") Курсы
 
   // Footer start
   include gamedev/elements/_footer.pug

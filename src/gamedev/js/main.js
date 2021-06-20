@@ -5,6 +5,20 @@
     $(this).toggleClass('open');
   });
 
+  $('.side-btn').on('click' , function(e) {
+    e.stopPropagation();
+    $('.side-nav').addClass('open');
+  });
+
+  $('.side-nav').on('click' , function(e) {
+    e.stopPropagation();
+    //$('.side-nav').removeClass('open');
+  });
+
+  $('body, html , .side-nav .close-nav').click(function(e){
+    $('.side-nav').removeClass('open');
+  });
+
   // Parallax effect for inner intro section
   var top_position = $('.how-study').offset().top - $('.how-study').height()*3-300;
 
