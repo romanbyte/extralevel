@@ -193,8 +193,12 @@ header {
             color: $default-text-color;
           }
           li {
-          	&:first-child , &:last-child {
+          	&:first-child {
           		display: none;
+          			& + li {
+          				display: none;
+          				font-weight: 700;
+          			}
           	}
             span {
               font-weight: 700;
@@ -1436,8 +1440,11 @@ button.mfp-close {
 
 	.side-nav {
     ul {
-      li:first-child , li:last-child {
+      li:first-child {
         display: block;
+        	& + li {
+        		display: block;
+        	}
       }
     }
   }
