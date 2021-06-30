@@ -193,7 +193,7 @@ header {
             color: $default-text-color;
           }
           li {
-          	&:first-child {
+          	&:first-child , &:last-child {
           		display: none;
           	}
             span {
@@ -1436,7 +1436,7 @@ button.mfp-close {
 
 	.side-nav {
     ul {
-      li:first-child {
+      li:first-child , li:last-child {
         display: block;
       }
     }
